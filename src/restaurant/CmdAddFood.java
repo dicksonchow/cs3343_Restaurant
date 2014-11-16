@@ -1,6 +1,6 @@
 package restaurant;
 
-public class CmdAddFood {
+public class CmdAddFood implements ActionCmd{
 
 	Food f;
 	
