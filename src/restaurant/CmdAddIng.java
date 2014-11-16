@@ -1,6 +1,6 @@
 package restaurant;
 
-public class CmdAddIng {
+public class CmdAddIng implements ActionCmd{
 
 	Ingredient i;
 	
