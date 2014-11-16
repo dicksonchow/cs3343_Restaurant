@@ -1,6 +1,6 @@
 package restaurant;
 
-public class CmdAddOrder {
+public class CmdAddOrder implements ActionCmd{
 
 	Order o;
 	
