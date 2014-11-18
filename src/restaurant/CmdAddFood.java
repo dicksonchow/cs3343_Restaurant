@@ -11,19 +11,19 @@ public class CmdAddFood {
 				Food food = r.findFood(cmdParts[1]);
 				if(food==null){
 					f=new Food (cmdParts[1],cmdParts[2],cmdParts[3]);    
-					System.out.println("Food is added.");
+					System.out.print("Food is added.\n");
 				}
 				else{
 					f=null;
-					System.out.println("Food ID has been used.");
+					System.out.print("Food ID has been used.\n");
 				}	
 			}
 			else {
-				System.out.println("Invalid input!");
+				System.out.print("Invalid input!\n");
 			}
 		}
 		catch(NumberFormatException e) {
-			System.out.println("Invalid food price!");
+			System.out.print("Invalid food price!\n");
 		}
 	}
 
