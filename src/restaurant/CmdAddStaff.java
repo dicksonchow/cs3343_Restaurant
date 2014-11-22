@@ -12,27 +12,27 @@ public class CmdAddStaff  implements ActionCmd{
 				if(staff==null){
 					if(cmdParts[3].equals("Manager")) {
 						s=new Manager (cmdParts[1],cmdParts[2],cmdParts[3], cmdParts[4], cmdParts[5]);
-						System.out.println("Staff is added.");
+						System.out.print("Staff is added.\n");
 					}
 					else if(cmdParts[3].equals("Staff")) {
 						s=new Staff (cmdParts[1],cmdParts[2],cmdParts[3], cmdParts[4], cmdParts[5]);
-						System.out.println("Staff is added.");
+						System.out.print("Staff is added.\n");
 					}
 					else {
-						System.out.println("Invalid position!");
+						System.out.print("Invalid position!\n");
 					}
 				}
 				else{
 					s=null;
-					System.out.println("Staff ID has been used.");
+					System.out.print("Staff ID has been used.\n");
 				}		
 			}
 			else {
-				System.out.println("Invalid input!");
+				System.out.print("Invalid input!\n");
 			}
 		}
 		catch(NumberFormatException e) {
-			System.out.println("Invalid salary!");
+			System.out.print("Invalid salary!\n");
 		}
 	
 	}

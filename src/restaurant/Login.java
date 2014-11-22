@@ -5,7 +5,6 @@ import java.util.Scanner;
 
 public class Login {
 
-    private static Authentication v;
 	private static String[] cmdParts;
 	private static String inputStaffId;
 	
@@ -15,9 +14,9 @@ public class Login {
     	inputStaffId = in.nextLine();
     	System.out.print("Password: ");
     	String inputStaffPw = in.nextLine();
-    	v = new Authentication(inputStaffId, inputStaffPw);
+    	//v = new Authentication(inputStaffId, inputStaffPw);
     
-    	if(v.validation() == true) {   		
+    	if(Authentication.getInstance().validation(inputStaffId, inputStaffPw) == true) {   		
     		CmdOptions.options(inputStaffId);
     		System.out.print("\n> ");    		
     		do {

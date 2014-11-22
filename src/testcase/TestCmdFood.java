@@ -12,7 +12,7 @@ import org.junit.Test;
 
 import restaurant.*;
 
-public class TestFood {
+public class TestCmdFood {
 
 	@Before
 	public void setUp() throws Exception {}
