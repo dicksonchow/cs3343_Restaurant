@@ -1,6 +1,6 @@
 package restaurant;
 
-public class CmdEditIng {
+public class CmdEditIngIngredient {
 
 	Ingredient i;
 	
@@ -10,20 +10,21 @@ public class CmdEditIng {
 				Restaurant r = Restaurant.getInstance();
 				Ingredient ingredient = r.findIngredient(cmdParts[1]); 
 				if(ingredient==null){ 
-					System.out.println("Invalid ingredient ID!");
+					System.out.print("Invalid ingredient ID!\n");
 				}
 				else {
 					r.removeIngredient(ingredient);
 					i=new Ingredient(cmdParts[1], cmdParts[2], cmdParts[3], cmdParts[4]);
-					System.out.println("Ingredient is edited.");
+					Restaurant.getInstance().addIngredient(i);
+					System.out.print("Ingredient is edited.\n");
 				}
 			}
 			else {
-				System.out.println("Invalid input!");
+				System.out.print("Invalid input!\n");
 			}
 		}
 		catch(NumberFormatException e) {
-			System.out.println("Invalid input!");
+			System.out.print("Invalid input!\n");
 		}
 	}
 	

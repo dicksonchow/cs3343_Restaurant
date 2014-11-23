@@ -1,21 +1,21 @@
 package restaurant;
 
-public class CmdDeleteIng {
+public class CmdDeleteIngredient {
 
 	public void execute(String[] cmdParts) {
 		if(cmdParts.length==2) {
 			Restaurant r = Restaurant.getInstance();
 			Ingredient ingredient = r.findIngredient(cmdParts[1]);
 			if(ingredient==null){ 
-				System.out.println("Invalid ingredient ID!");
+				System.out.print("Invalid ingredient ID!\n");
 			}
 			else{
 				r.removeIngredient(ingredient);
-				System.out.println("Ingredient is deleted.");
+				System.out.print("Ingredient is deleted.\n");
 			}
 		}
 		else {
-			System.out.println("Invalid input!");
+			System.out.print("Invalid input!\n");
 		}
 
 	}

@@ -7,6 +7,7 @@ import org.junit.Test;
 
 import restaurant.Authentication;
 import restaurant.CmdAddStaff;
+import restaurant.Identification;
 
 public class TestAuth {
 
@@ -56,5 +57,17 @@ public class TestAuth {
 	public void testValidPasswordAllCorrectStaff(){
 		boolean b = Authentication.getInstance().validation("S101", "123");
 		assertEquals(b, true);
+	}
+	
+	@Test
+	public void testIdentityManager(){
+		boolean b = Identification.identification("M101");
+		assertEquals(b, true);
+	}
+	
+	@Test
+	public void testIdentityNormal(){
+		boolean b = Identification.identification("S101");
+		assertEquals(b, false);
 	}
 }

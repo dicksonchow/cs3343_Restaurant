@@ -80,13 +80,13 @@ public class ExecuteCmd {
             (new CmdDeleteRTable()).execute(cmdParts);             
         
         if (cmdParts[0].equals("addIng"))
-            (new CmdAddIng()).execute(cmdParts);
+            (new CmdAddIngredient()).execute(cmdParts);
         if (cmdParts[0].equals("listIng"))
             (new CmdListIng()).execute();
         if (cmdParts[0].equals("editIng"))
-            (new CmdEditIng()).execute(cmdParts);
+            (new CmdEditIngIngredient()).execute(cmdParts);
         if (cmdParts[0].equals("deleteIng"))
-            (new CmdDeleteIng()).execute(cmdParts);
+            (new CmdDeleteIngredient()).execute(cmdParts);
            
             
         if (cmdParts[0].equals("revenue")) {

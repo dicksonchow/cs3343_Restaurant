@@ -6,7 +6,7 @@ public class Profit {
 
 	public int setProfit() {
 		profit = 0;
-		return profit = Revenue.setRevenue() - Cost.setCost();
+		return profit = Revenue.getInstance().setRevenue() - Cost.getInstance().setCost(); //Before Cost.setCost();
 	}
 	
 	public String toString() {

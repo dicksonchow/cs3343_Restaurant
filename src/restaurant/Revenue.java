@@ -1,20 +1,28 @@
 package restaurant;
 
+import java.util.ArrayList;
+
 public class Revenue {
 
-	private static int revenue;
+	//private int revenue;
+	private static Revenue instance = new Revenue();
+	
+	public static Revenue getInstance() {
+		return instance;
+	}
 
-	public static int setRevenue() {
-		revenue = 0;
-		Restaurant restaurant = Restaurant.getInstance();
-		for(int i=0; i<restaurant.getOrderArrayList().size(); i++) {			
-			revenue += restaurant.getOrderArrayList().get(i).getTotalAmount();
+	public int setRevenue() {
+		int revenue = 0;
+		//Restaurant restaurant = Restaurant.getInstance();
+		ArrayList<Order> order = Restaurant.getInstance().getOrderArrayList();
+		for(Order o: order) {			
+			revenue += o.getTotalAmount();
 		}
 		return revenue;
 	}
 	
 	public String toString() {
-		setRevenue();
+		int revenue = setRevenue();
 		return String.format("%-15s", "$" + revenue);
 	}
 	

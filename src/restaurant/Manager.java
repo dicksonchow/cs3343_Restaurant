@@ -8,38 +8,38 @@ public class Manager extends Staff {
 	}
 
 	public void printOptions() {
-		System.out.println("\n--------------- Options ----------------");
+		System.out.print("\n--------------- Options ----------------\n");
 		
- 		System.out.println("a. List Order"); 
- 		System.out.println("b. Add Order");
-		System.out.println("c. Edit Order");
-		System.out.println("d. Delete Order");
+ 		System.out.print("a. List Order\n"); 
+ 		System.out.print("b. Add Order\n");
+		System.out.print("c. Edit Order\n");
+		System.out.print("d. Delete Order\n");
 		
-		System.out.println("\ne. List Menu");
- 		System.out.println("f. Add Food"); 
- 		System.out.println("g. Edit Food"); 
- 		System.out.println("h. Delete Food");
+		System.out.print("\ne. List Menu\n");
+ 		System.out.print("f. Add Food\n"); 
+ 		System.out.print("g. Edit Food\n"); 
+ 		System.out.print("h. Delete Food\n");
    
- 		System.out.println("\ni. List Ingredient");		
- 		System.out.println("j. Add Ingredient"); 
- 		System.out.println("k. Edit Ingredient");  
- 		System.out.println("l. Delete Ingredient"); 
+ 		System.out.print("\ni. List Ingredient\n");		
+ 		System.out.print("j. Add Ingredient\n"); 
+ 		System.out.print("k. Edit Ingredient\n");  
+ 		System.out.print("l. Delete Ingredient\n"); 
 		
- 		System.out.println("\nm. List Reserved Table"); 
- 		System.out.println("n. Reserve Table");
-		System.out.println("o. Edit Reserved Table");
-		System.out.println("p. Delete Reserved Table");
+ 		System.out.print("\nm. List Reserved Table\n"); 
+ 		System.out.print("n. Reserve Table\n");
+		System.out.print("o. Edit Reserved Table\n");
+		System.out.print("p. Delete Reserved Table\n");
  		
- 		System.out.println("\nq. List Staff");		
- 		System.out.println("r. Add Staff"); 
- 		System.out.println("s. Edit Staff");  
- 		System.out.println("t. Delete Staff"); 
+ 		System.out.print("\nq. List Staff\n");		
+ 		System.out.print("r. Add Staff\n"); 
+ 		System.out.print("s. Edit Staff\n");  
+ 		System.out.print("t. Delete Staff\n"); 
  		
- 		System.out.println("\nu. Revenue"); 
- 		System.out.println("v. Cost"); 
- 		System.out.println("w. Profit"); 
+ 		System.out.print("\nu. Revenue\n"); 
+ 		System.out.print("v. Cost\n"); 
+ 		System.out.print("w. Profit\n"); 
  		
-		System.out.println("\n(You may enter \"options\" to check the options again.)");
+		System.out.print("\n(You may enter \"options\" to check the options again.)\n");
 	}
 
 }

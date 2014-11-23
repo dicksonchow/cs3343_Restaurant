@@ -9,6 +9,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import restaurant.CmdAddStaff;
+import restaurant.CmdDeleteStaff;
+import restaurant.CmdEditStaff;
 
 public class TestCmdStaff {
 	@Before
@@ -100,6 +102,89 @@ public class TestCmdStaff {
 		String[] addStaffInvPos = {"addStaff", "Arron", "50", "123"};
 		CmdAddStaff cmd = new CmdAddStaff();
 		cmd.execute(addStaffInvPos);
+		assertEquals("Invalid input!\n", getOutput());
+	}
+	
+	//editStaff Staff_ID New_Staff_Name New_Staff_Position New_Staff_Salary New_Staff_Password
+	
+	@Test
+	public void testEditStaffCorrect() throws Exception{
+		setOutput();
+		String[] editStaffCorr = {"editStaff","S101","Java","Staff","20","321"};
+		CmdEditStaff cmd = new CmdEditStaff();
+		cmd.execute(editStaffCorr);
+		assertEquals("Staff is edited.\n", getOutput());
+	}
+	
+	@Test
+	public void testEditStaffInvPos() throws Exception{
+		setOutput();
+		String[] editStaffCorr = {"editStaff","S101","Java","asdfasdf","20","321"};
+		CmdEditStaff cmd = new CmdEditStaff();
+		cmd.execute(editStaffCorr);
+		assertEquals("Invalid position!\n", getOutput());
+	}
+	
+	@Test
+	public void testEditStaffNotExists() throws Exception{
+		setOutput();
+		String[] editStaffCorr = {"editStaff","S500","Java","Staff","20","321"};
+		CmdEditStaff cmd = new CmdEditStaff();
+		cmd.execute(editStaffCorr);
+		assertEquals("Invalid staff ID!\n", getOutput());
+	}
+	
+	@Test
+	public void testEditStaffInvInput() throws Exception{
+		setOutput();
+		String[] editStaffCorr = {"editStaff","S500","20","321"};
+		CmdEditStaff cmd = new CmdEditStaff();
+		cmd.execute(editStaffCorr);
+		assertEquals("Invalid input!\n", getOutput());
+	}
+	
+	@Test
+	public void testEditStaffInvSal() throws Exception{
+		setOutput();
+		String[] editStaffCorr = {"editStaff","S500","Java","Staff","asdfsadfdas","321"};
+		CmdEditStaff cmd = new CmdEditStaff();
+		cmd.execute(editStaffCorr);
+		assertEquals("Invalid salary!\n", getOutput());
+	}
+	
+	@Test
+	public void testEditStaffNegSal() throws Exception{
+		setOutput();
+		String[] editStaffCorr = {"editStaff","S500","Java","Staff","-1000","321"};
+		CmdEditStaff cmd = new CmdEditStaff();
+		cmd.execute(editStaffCorr);
+		assertEquals("Invalid input!\n", getOutput());
+	}
+	
+	@Test
+	public void testDeleteStaffCorr() throws Exception{
+		setOutput();
+		String[] deleteStaffCorr = {"deleteStaff","S101"};
+		CmdDeleteStaff cmd = new CmdDeleteStaff();
+		cmd.execute(deleteStaffCorr);
+		assertEquals("Staff is deleted.\n", getOutput());
+	}
+	
+	@Test
+	public void testDeleteStaffInvId() throws Exception{
+		setOutput();
+		String[] deleteStaffCorr = {"deleteStaff","S520"};
+		CmdDeleteStaff cmd = new CmdDeleteStaff();
+		cmd.execute(deleteStaffCorr);
+		assertEquals("Invalid staff ID!\n", getOutput());
+	}
+	
+	@Test
+	public void testDeleteStaffInvInput() throws Exception{
+		setOutput();
+		String[] deleteStaffCorr = {"deleteStaff","S101","Java"};
+		CmdDeleteStaff cmd = new CmdDeleteStaff();
+		cmd.execute(deleteStaffCorr);
 		assertEquals("Invalid input!\n", getOutput());
 	}
 	

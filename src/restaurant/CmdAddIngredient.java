@@ -1,6 +1,6 @@
 package restaurant;
 
-public class CmdAddIng implements ActionCmd{
+public class CmdAddIngredient implements ActionCmd{
 
 	Ingredient i;
 	
@@ -10,20 +10,21 @@ public class CmdAddIng implements ActionCmd{
 				Restaurant r = Restaurant.getInstance();
 				Ingredient ingredient = r.findIngredient(cmdParts[1]);
 				if(ingredient==null){
-					i=new Ingredient (cmdParts[1],cmdParts[2],cmdParts[3],cmdParts[4]);    
-					System.out.println("Ingredient is added.");
+					i=new Ingredient (cmdParts[1],cmdParts[2],cmdParts[3],cmdParts[4]); 
+					Restaurant.getInstance().addIngredient(i);
+					System.out.print("Ingredient is added.\n");
 				}
 				else{
 					i=null;
-					System.out.println("Ingredient ID has been used.");
+					System.out.print("Ingredient ID has been used.\n");
 				}	
 			}
 			else {
-				System.out.println("Invalid input!");
+				System.out.print("Invalid input!\n");
 			}
 		}
 		catch(NumberFormatException e) {
-			System.out.println("Invalid input!");
+			System.out.print("Invalid input!\n");
 		}
 	}
 

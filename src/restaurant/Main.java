@@ -5,6 +5,7 @@ import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public class Main {
+	//C:\Users\Chow Tak Shing\Dropbox\City U\2014-2015 Semester A\CS3343 Software Engineering Practice\test1.txt
 
 	private static Scanner inFile;
 	
