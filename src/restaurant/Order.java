@@ -4,22 +4,22 @@ public class Order implements Comparable<Order> {
 
 	private String tableId;
 	private int totalAmount;	
-	private String[] cmdParts;
+	private String[] foodId;
 	private String order;
 	private Restaurant restaurant = Restaurant.getInstance();
 	
-	public Order(String[] cmdParts) {
-		this.tableId=cmdParts[1];
-		this.cmdParts=cmdParts;
-		restaurant.addOrder(this);
+	public Order(String tableId, String[] foodId) {
+		this.tableId=tableId;
+		this.foodId=foodId;
+		//restaurant.addOrder(this);
 	}
 
 	public String setOrder() throws NullPointerException {
 		order = "";
 		
-		for(int i=2; i<(cmdParts.length-1); i++) {	
+		for(int i = 0; i<foodId.length; i++) {	
 			try {
-				order = order + restaurant.findFood(cmdParts[i]).getFoodName() +", ";
+				order = order + restaurant.findFood(foodId[i]).getFoodName() +", ";
 			}
 			catch (NullPointerException e) {
 				order = order + "";
@@ -27,7 +27,7 @@ public class Order implements Comparable<Order> {
 		}
 		
 		try {
-			order = order + restaurant.findFood(cmdParts[(cmdParts.length-1)]).getFoodName();
+			order = order + restaurant.findFood(foodId[foodId.length-1]).getFoodName();
 		}
 		catch(NullPointerException e) {
 			order = order.substring(0, order.length()-2);
@@ -38,9 +38,9 @@ public class Order implements Comparable<Order> {
 	public int setTotalAmount() throws NullPointerException {
 		totalAmount = 0;
 		
-		for(int i=2; i<cmdParts.length; i++) {
+		for(int i=0; i<foodId.length; i++) {
 			try {
-			totalAmount += restaurant.findFood(cmdParts[i]).getFoodPrice();
+			totalAmount += restaurant.findFood(foodId[i]).getFoodPrice();
 			}
 			catch(NullPointerException e) {
 				totalAmount += 0;
