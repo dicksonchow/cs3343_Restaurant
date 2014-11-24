@@ -2,16 +2,20 @@ package restaurant;
 
 public class Profit {
 	
-	private int profit;
+	//private int profit;
+	private static Profit instance = new Profit();
+
+	public static Profit getInstance() {
+		return instance;
+	}
 
 	public int setProfit() {
-		profit = 0;
-		return profit = Revenue.getInstance().setRevenue() - Cost.getInstance().setCost(); //Before Cost.setCost();
+		return Revenue.getInstance().setRevenue() - Cost.getInstance().setCost(); //Before Cost.setCost()
 	}
 	
 	public String toString() {
-		setProfit();
-		return String.format("%-15s", "$" + profit);
+		int profit = setProfit();
+		return String.format("%-15s\n", "$" + profit);
 	}
 
 }

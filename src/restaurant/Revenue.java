@@ -16,7 +16,7 @@ public class Revenue {
 		//Restaurant restaurant = Restaurant.getInstance();
 		ArrayList<Order> order = Restaurant.getInstance().getOrderArrayList();
 		for(Order o: order) {			
-			revenue += o.getTotalAmount();
+			revenue += o.setTotalAmount(); //before o.getTotalAmount
 		}
 		return revenue;
 	}

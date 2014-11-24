@@ -54,6 +54,8 @@ public class TestOrder {
         Restaurant.getInstance().removeFood(f3);
         Restaurant.getInstance().removeFood(f4);
         Restaurant.getInstance().removeFood(f5);
+        Restaurant.getInstance().removeOrder(o1);
+        Restaurant.getInstance().removeOrder(o2);
     }
 
     @Test
