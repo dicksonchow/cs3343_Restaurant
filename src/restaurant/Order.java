@@ -19,19 +19,22 @@ public class Order implements Comparable<Order> {
 		
 		for(int i = 0; i<foodId.length; i++) {	
 			try {
-				order = order + restaurant.findFood(foodId[i]).getFoodName() +", ";
+				if (i == foodId.length - 1)
+					order = order + restaurant.findFood(foodId[i]).getFoodName();
+				else
+					order = order + restaurant.findFood(foodId[i]).getFoodName() +", ";
 			}
 			catch (NullPointerException e) {
 				order = order + "";
 			}
 		}
 		
-		try {
+		/*try {
 			order = order + restaurant.findFood(foodId[foodId.length-1]).getFoodName();
 		}
 		catch(NullPointerException e) {
 			order = order.substring(0, order.length()-2);
-		}
+		}*/
 		return order;		
 	}
 	
