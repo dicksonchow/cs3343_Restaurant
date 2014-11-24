@@ -17,21 +17,18 @@ public class Authentication {
 		return instance;
 	}
 	
-	public boolean validation(String inputStaffId, String inputStaffPw) {
+	public String validation(String inputStaffId, String inputStaffPw) {
 			if(restaurant.findStaff(inputStaffId) != null) {
 				staff = restaurant.findStaff(inputStaffId);		
 				if(staff.getStaffPassword().equals(inputStaffPw)) {
-					System.out.println("\nLogin successfully!" + "\nWelcome, " + staff.getStaffName() + ".");
-					return true;
+					return "Login successfully";
 				}
 				else {
-					System.out.println("\nInvalid password!");
-					return false;
+					return "Invalid password";
 				}
 			}
 			else {
-				System.out.println("\nInvalid staff ID!");
-				return false;
+				return "Invalid staff ID";
 			}
 	}
 	

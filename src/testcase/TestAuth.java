@@ -25,38 +25,38 @@ public class TestAuth {
 	
 	@Test
 	public void testValidManagerNotExists(){
-		boolean b = Authentication.getInstance().validation("M1000000", "4321");
-		assertEquals(b, false);
+		String b = Authentication.getInstance().validation("M1000000", "4321");
+		assertEquals(b, "Invalid staff ID");
 	}
 	
 	@Test
 	public void testValidPasswordNotCorrectManager(){
-		boolean b = Authentication.getInstance().validation("M101", "4321");
-		assertEquals(b, false);
+		String b = Authentication.getInstance().validation("M101", "4321");
+		assertEquals(b, "Invalid password");
 	}
 	
 	@Test
 	public void testValidPasswordAllCorrectManager(){
-		boolean b = Authentication.getInstance().validation("M101", "123");
-		assertEquals(b, true);
+		String b = Authentication.getInstance().validation("M101", "123");
+		assertEquals(b, "Login successfully");
 	}
 	
 	@Test
 	public void testValidStaffNotExists(){
-		boolean b = Authentication.getInstance().validation("S1000000", "4321");
-		assertEquals(b, false);
+		String b = Authentication.getInstance().validation("S1000000", "4321");
+		assertEquals(b, "Invalid staff ID");
 	}
 	
 	@Test
 	public void testValidPasswordNotCorrectStaff(){
-		boolean b = Authentication.getInstance().validation("S101", "4321");
-		assertEquals(b, false);
+		String b = Authentication.getInstance().validation("S101", "4321");
+		assertEquals(b, "Invalid password");
 	}
 	
 	@Test
 	public void testValidPasswordAllCorrectStaff(){
-		boolean b = Authentication.getInstance().validation("S101", "123");
-		assertEquals(b, true);
+		String b = Authentication.getInstance().validation("S101", "123");
+		assertEquals(b, "Login successfully");
 	}
 	
 	@Test

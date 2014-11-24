@@ -10,21 +10,21 @@ public class CmdEditIngIngredient {
 				Restaurant r = Restaurant.getInstance();
 				Ingredient ingredient = r.findIngredient(cmdParts[1]); 
 				if(ingredient==null){ 
-					System.out.print("Invalid ingredient ID!\n");
+					System.out.print("Invalid ingredient ID!");
 				}
 				else {
 					r.removeIngredient(ingredient);
 					i=new Ingredient(cmdParts[1], cmdParts[2], cmdParts[3], cmdParts[4]);
 					Restaurant.getInstance().addIngredient(i);
-					System.out.print("Ingredient is edited.\n");
+					System.out.print("Ingredient is edited.");
 				}
 			}
 			else {
-				System.out.print("Invalid input!\n");
+				System.out.print("Invalid input!");
 			}
 		}
 		catch(NumberFormatException e) {
-			System.out.print("Invalid input!\n");
+			System.out.print("Invalid input!");
 		}
 	}
 	

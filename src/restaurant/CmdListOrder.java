@@ -2,8 +2,8 @@ package restaurant;
 
 public class CmdListOrder{
 
-	public void execute() {
+	public String execute(String[] cmdParts) {
 		Restaurant restaurant = Restaurant.getInstance();
-		restaurant.listOrder();
+		return restaurant.listOrder();
     }
 }

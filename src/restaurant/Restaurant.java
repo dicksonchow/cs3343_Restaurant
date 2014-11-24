@@ -85,10 +85,14 @@ public class Restaurant {
 	}
 	
 //Order
-	public void listOrder() {
-		System.out.println(Order.getListingHeader());
-		for (Order o: allOrders)
-			System.out.println(o.toString());
+	public String listOrder() {
+		String listingHeader = Order.getListingHeader() + "\n";
+		String toString ="";
+		for (Order o: allOrders) {
+			toString += o.toString() + "\n";
+		}
+		String str = listingHeader + toString;
+		return str;
 	}
 
 	public void addOrder(Order o) {	

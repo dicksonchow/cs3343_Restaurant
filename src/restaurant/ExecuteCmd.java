@@ -2,13 +2,13 @@ package restaurant;
 
 public class ExecuteCmd {
 		
-	public static void executeCmd(String[] cmdParts, String inputStaffId) {
-		InputFormat.inputFormat(cmdParts);
-		
-	    if (cmdParts[0].equals("options")) {
-	    	inputStaffId = Login.getInputStaffId();
-	    	CmdOptions.options(inputStaffId);
-	    }
+	public static String executeCmd(String[] cmdParts) {
+//		InputFormat.inputFormat(cmdParts);
+//		
+//	    if (cmdParts[0].equals("options")) {
+//	    	inputStaffId = Login.getInputStaffId();
+//	    	CmdOptions.options(inputStaffId);
+//	    }
 	        
 		
         if (cmdParts[0].equals("addFood"))
@@ -21,50 +21,54 @@ public class ExecuteCmd {
             (new CmdListMenu()).execute(); 
         
         
-        if (cmdParts[0].equals("addStaff")) {
-        	if(UserIdentification.userIdentification(inputStaffId) == true) {        	
+        if (cmdParts[0].equals("addStaff")) 
+//        	if(UserIdentification.userIdentification(inputStaffId) == true) {        	
         		(new CmdAddStaff()).execute(cmdParts);
-        	}
-        	else {
-        		System.out.println("Invalid access." + "\nThis function is only available for manager.");
-        	}
-        }
+//        	}
+//        	else {
+//        		System.out.println("Invalid access." + "\nThis function is only available for manager.");
+//        	}
+//        }
         
        
-        if (cmdParts[0].equals("deleteStaff")) {
-        	if(UserIdentification.userIdentification(inputStaffId) == true) {        	
+        if (cmdParts[0].equals("deleteStaff")) 
+//        	if(UserIdentification.userIdentification(inputStaffId) == true) {        	
         		(new CmdDeleteStaff()).execute(cmdParts);
-        	}
-        	else {
-        		System.out.println("Invalid access." + "\nThis function is only available for manager.");
-        	}
-        }
+//        	}
+//        	else {
+//        		System.out.println("Invalid access." + "\nThis function is only available for manager.");
+//        	}
+//        }
         
         
-        if (cmdParts[0].equals("editStaff")) {
-        	if(UserIdentification.userIdentification(inputStaffId) == true) {        	
+        if (cmdParts[0].equals("editStaff")) 
+//        	if(UserIdentification.userIdentification(inputStaffId) == true) {        	
         		(new CmdEditStaff()).execute(cmdParts);
-        	}
-        	else {
-        		System.out.println("Invalid access." + "\nThis function is only available for manager.");
-        	}
-        }
+//        	}
+//        	else {
+//        		System.out.println("Invalid access." + "\nThis function is only available for manager.");
+//        	}
+//        }
         
         
-        if (cmdParts[0].equals("listStaff")) {
-        	if(UserIdentification.userIdentification(inputStaffId) == true) {        	
+        if (cmdParts[0].equals("listStaff")) 
+//        	if(UserIdentification.userIdentification(inputStaffId) == true) {        	
         		(new CmdListStaff()).execute();
-            }
-            else {
-            	System.out.println("Invalid access." + "\nThis function is only available for manager.");
-            }
+//            }
+//            else {
+//            	System.out.println("Invalid access." + "\nThis function is only available for manager.");
+//            }
+//        }
+        
+        
+        if (cmdParts[0].equals("addOrder")) {
+        	CmdAddOrder addOrder = new CmdAddOrder();
+            return addOrder.execute(cmdParts); 
         }
-        
-        
-        if (cmdParts[0].equals("addOrder"))
-            (new CmdAddOrder()).execute(cmdParts);              
-        if (cmdParts[0].equals("listOrder"))
-            (new CmdListOrder()).execute();            
+        if (cmdParts[0].equals("listOrder")) {
+        	CmdListOrder listOrder = new CmdListOrder();
+            return listOrder.execute(cmdParts);
+        }
         if (cmdParts[0].equals("editOrder"))       	
         	(new CmdEditOrder()).execute(cmdParts);               
         if (cmdParts[0].equals("deleteOrder"))
@@ -89,34 +93,34 @@ public class ExecuteCmd {
             (new CmdDeleteIngredient()).execute(cmdParts);
            
             
-        if (cmdParts[0].equals("revenue")) {
-        	if(UserIdentification.userIdentification(inputStaffId) == true) {        	
+        if (cmdParts[0].equals("revenue")) 
+//        	if(UserIdentification.userIdentification(inputStaffId) == true) {        	
         		(new CmdRevenue()).execute(); 
-            }
-            else {
-            	System.out.println("Invalid access." + "\nThis function is only available for manager.");
-            }
-        }
+//            }
+//            else {
+//            	System.out.println("Invalid access." + "\nThis function is only available for manager.");
+//            }
+//        }
         	
-        if (cmdParts[0].equals("cost")) {
-        	if(UserIdentification.userIdentification(inputStaffId) == true) {        	
+        if (cmdParts[0].equals("cost")) 
+//        	if(UserIdentification.userIdentification(inputStaffId) == true) {        	
         		(new CmdCost()).execute(); 
-            }
-            else {
-            	System.out.println("Invalid access." + "\nThis function is only available for manager.");
-            }
-        }	
+//            }
+//            else {
+//            	System.out.println("Invalid access." + "\nThis function is only available for manager.");
+//            }
+//        }	
         	
-        if (cmdParts[0].equals("profit")) {
-        	if(UserIdentification.userIdentification(inputStaffId) == true) {        	
+        if (cmdParts[0].equals("profit")) 
+//        	if(UserIdentification.userIdentification(inputStaffId) == true) {        	
         		(new CmdProfit()).execute(); 
-            }
-            else {
-            	System.out.println("Invalid access." + "\nThis function is only available for manager.");
-            }
-        }		
+//            }
+//            else {
+//            	System.out.println("Invalid access." + "\nThis function is only available for manager.");
+//            }
+//        }		
             
-        
+        return null;    
 	}	
 	
 }

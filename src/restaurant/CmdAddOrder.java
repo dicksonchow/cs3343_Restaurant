@@ -14,7 +14,7 @@ public class CmdAddOrder implements ActionCmd, FoodIdValidate{
 		return true;
 	}
 	
-	public void execute(String[] cmdParts) {
+	public String execute(String[] cmdParts) {
 		if(cmdParts.length>=3) {
 
 			String tableId;
@@ -30,21 +30,21 @@ public class CmdAddOrder implements ActionCmd, FoodIdValidate{
 				if(order==null){
 					o = new Order (tableId, foodId);    
 					Restaurant.getInstance().addOrder(o);
-					System.out.print("Order is added.\n");
+					return "Order is added.";
 				}   	
 				else{
 					o = null;
-					System.out.print("Order ID has been used.\n");
+					return "Order ID has been used.";
 				}
 			}
 			else {
-				System.out.print("Invalid food ID!\n");
+				return "Invalid food ID!";
 			}			
 		}
 		else {
-			System.out.print("Invalid input!\n");
+			return "Invalid input!";
 		}
-
+		
 	}
 
 }

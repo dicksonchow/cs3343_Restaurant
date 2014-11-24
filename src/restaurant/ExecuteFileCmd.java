@@ -2,15 +2,15 @@ package restaurant;
 
 public class ExecuteFileCmd {
 	
-	private static String inputStaffId;
+//	private static String inputStaffId;
 	
 	public static void executeFileCmd(String[] cmdParts) {
 		InputFormat.inputFormat(cmdParts);
 		
-        if (cmdParts[0].equals("options")) {
-        	inputStaffId = Login.getInputStaffId();
-        	CmdOptions.options(inputStaffId);
-        }
+//        if (cmdParts[0].equals("options")) {
+//        	inputStaffId = Login.getInputStaffId();
+//        	CmdOptions.options(inputStaffId);
+//        }
         
         if (cmdParts[0].equals("addFood"))
         	(new CmdAddFood()).execute(cmdParts);
@@ -33,7 +33,7 @@ public class ExecuteFileCmd {
         if (cmdParts[0].equals("addOrder"))
             (new CmdAddOrder()).execute(cmdParts);
         if (cmdParts[0].equals("listOrder"))
-            (new CmdListOrder()).execute();
+            (new CmdListOrder()).execute(cmdParts);
         if (cmdParts[0].equals("editOrder"))
             (new CmdEditOrder()).execute(cmdParts);
         if (cmdParts[0].equals("deleteOrder"))

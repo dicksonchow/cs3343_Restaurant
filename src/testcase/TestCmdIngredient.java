@@ -28,37 +28,33 @@ public class TestCmdIngredient {
 	@Test
 	public void testAddIngreCorrect() throws Exception 
 	{
-		setOutput();
+//		setOutput();
 		String[] addIngre = {"addIng","005", "sugar", "10", "20"};
-		(new CmdAddIngredient()).execute(addIngre);
-		assertEquals("Ingredient is added.\n", getOutput());
+		assertEquals("Ingredient is added.", (new CmdAddIngredient()).execute(addIngre));
 	}
 	
 	@Test
 	public void testAddIngreIdDul() throws Exception 
 	{
-		setOutput();
+//		setOutput();
 		String[] addIngre = {"addIng","001", "fish", "10", "20"};
-		(new CmdAddIngredient()).execute(addIngre);
-		assertEquals("Ingredient ID has been used.\n", getOutput());
+		assertEquals("Ingredient ID has been used.", (new CmdAddIngredient()).execute(addIngre));
 	}
 	
 	@Test
 	public void testAddIngreInvInput() throws Exception 
 	{
-		setOutput();
+//		setOutput();
 		String[] addIngre = {"addIng", "20"};
-		(new CmdAddIngredient()).execute(addIngre);
-		assertEquals("Invalid input!\n", getOutput());
+		assertEquals("Invalid input!", (new CmdAddIngredient()).execute(addIngre));
 	}
 	
 	@Test
 	public void testAddIngreNumEx() throws Exception 
 	{
-		setOutput();
+//		setOutput();
 		String[] addIngre = {"addIng","001", "fish", "adfasdf", "asdfasdf"};
-		(new CmdAddIngredient()).execute(addIngre);
-		assertEquals("Invalid input!\n", getOutput());
+		assertEquals("Invalid input!", (new CmdAddIngredient()).execute(addIngre));
 	}
 	
 	@Test
@@ -67,7 +63,7 @@ public class TestCmdIngredient {
 		setOutput();
 		String[] editIngre = {"editIng","020", "fish", "10", "20"};
 		(new CmdEditIngIngredient()).execute(editIngre);
-		assertEquals("Invalid ingredient ID!\n", getOutput());
+		assertEquals("Invalid ingredient ID!", getOutput());
 	}
 	
 	@Test
@@ -76,7 +72,7 @@ public class TestCmdIngredient {
 		setOutput();
 		String[] editIngre = {"editIng","001", "bean", "10", "20"};
 		(new CmdEditIngIngredient()).execute(editIngre);
-		assertEquals("Ingredient is edited.\n", getOutput());
+		assertEquals("Ingredient is edited.", getOutput());
 	}
 	
 	@Test
@@ -85,7 +81,7 @@ public class TestCmdIngredient {
 		setOutput();
 		String[] editIngre = {"001", "20"};
 		(new CmdEditIngIngredient()).execute(editIngre);
-		assertEquals("Invalid input!\n", getOutput());
+		assertEquals("Invalid input!", getOutput());
 	}
 	
 	@Test
@@ -94,7 +90,7 @@ public class TestCmdIngredient {
 		setOutput();
 		String[] editIngre = {"editIng","001", "bean", "abc", "efg"};
 		(new CmdEditIngIngredient()).execute(editIngre);
-		assertEquals("Invalid input!\n", getOutput());
+		assertEquals("Invalid input!", getOutput());
 	}
 	
 	//deleteIng Ingredient_ID
@@ -105,7 +101,7 @@ public class TestCmdIngredient {
 		setOutput();
 		String[] deleteIngre = {"deleteIng", "002"};
 		(new CmdDeleteIngredient()).execute(deleteIngre);
-		assertEquals("Ingredient is deleted.\n", getOutput());
+		assertEquals("Ingredient is deleted.", getOutput());
 	}
 	
 	@Test
@@ -114,7 +110,7 @@ public class TestCmdIngredient {
 		setOutput();
 		String[] deleteIngre = {"deleteIng", "020"};
 		(new CmdDeleteIngredient()).execute(deleteIngre);
-		assertEquals("Invalid ingredient ID!\n", getOutput());
+		assertEquals("Invalid ingredient ID!", getOutput());
 	}
 	
 	@Test
@@ -123,7 +119,7 @@ public class TestCmdIngredient {
 		setOutput();
 		String[] deleteIngre = {"deleteIng", "002", "bean", "abc", "efg"};
 		(new CmdDeleteIngredient()).execute(deleteIngre);
-		assertEquals("Invalid input!\n", getOutput());
+		assertEquals("Invalid input!", getOutput());
 	}
 	
 	PrintStream oldPrintStream;

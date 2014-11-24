@@ -4,7 +4,7 @@ public class CmdAddIngredient implements ActionCmd{
 
 	Ingredient i;
 	
-	public void execute(String[] cmdParts) throws NumberFormatException {
+	public String execute(String[] cmdParts) throws NumberFormatException {
 		try {
 			if(cmdParts.length==5 && Integer.parseInt(cmdParts[3])>=0 && Integer.parseInt(cmdParts[4])>=0) {
 				Restaurant r = Restaurant.getInstance();
@@ -12,19 +12,19 @@ public class CmdAddIngredient implements ActionCmd{
 				if(ingredient==null){
 					i=new Ingredient (cmdParts[1],cmdParts[2],cmdParts[3],cmdParts[4]); 
 					Restaurant.getInstance().addIngredient(i);
-					System.out.print("Ingredient is added.\n");
+					return "Ingredient is added.";
 				}
 				else{
 					i=null;
-					System.out.print("Ingredient ID has been used.\n");
+					return "Ingredient ID has been used.";
 				}	
 			}
 			else {
-				System.out.print("Invalid input!\n");
+				return "Invalid input!";
 			}
 		}
 		catch(NumberFormatException e) {
-			System.out.print("Invalid input!\n");
+			return "Invalid input!";
 		}
 	}
 

@@ -15,7 +15,7 @@ public class UserIdentification {
 		}
 	}
 	
-	public static Staff getStaff() {
-		return staff;
-	}
+//	public static Staff getStaff() {
+//		return staff;
+//	}
 }

@@ -7,15 +7,15 @@ public class CmdDeleteIngredient {
 			Restaurant r = Restaurant.getInstance();
 			Ingredient ingredient = r.findIngredient(cmdParts[1]);
 			if(ingredient==null){ 
-				System.out.print("Invalid ingredient ID!\n");
+				System.out.print("Invalid ingredient ID!");
 			}
 			else{
 				r.removeIngredient(ingredient);
-				System.out.print("Ingredient is deleted.\n");
+				System.out.print("Ingredient is deleted.");
 			}
 		}
 		else {
-			System.out.print("Invalid input!\n");
+			System.out.print("Invalid input!");
 		}
 
 	}

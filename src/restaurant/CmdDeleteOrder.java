@@ -7,15 +7,15 @@ public class CmdDeleteOrder {
 			Restaurant r = Restaurant.getInstance();
 			Order order = r.findOrder(cmdParts[1]);
 			if(order==null){ 
-				System.out.println("Invalid table ID!");
+				System.out.print("Invalid table ID!");
 			}
 			else{
 				r.removeOrder(order);
-				System.out.println("Order is deleted.");
+				System.out.print("Order is deleted.");
 			}
 		}
 		else {
-			System.out.println("Invalid input!");
+			System.out.print("Invalid input!");
 		}
 		
 	}

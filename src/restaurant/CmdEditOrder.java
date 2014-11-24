@@ -14,7 +14,7 @@ public class CmdEditOrder implements ActionCmd, FoodIdValidate{
 		return true;
 	}
 	
-	public void execute(String[] cmdParts) {
+	public String execute(String[] cmdParts) {
 		if(cmdParts.length>=3) {
 
 			String tableId;
@@ -28,21 +28,21 @@ public class CmdEditOrder implements ActionCmd, FoodIdValidate{
 				Order order = r.findOrder(cmdParts[1]);
 				
 				if(order==null){ 
-					System.out.println("Invalid table ID!");
+					return "Invalid table ID!";
 				}
 				else{
 					r.removeOrder(order);
 					o = new Order (tableId, foodId);
 					Restaurant.getInstance().addOrder(o);
-					System.out.println("Order is edited.");
+					return "Order is edited.";
 				}	
 			}
 			else {
-				System.out.println("Invalid food ID!");
+				return "Invalid food ID!";
 			}	
 		}
 		else {
-			System.out.println("Invalid input!");
+			return "Invalid input!";
 		}
 	}
 

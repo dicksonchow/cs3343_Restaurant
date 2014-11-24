@@ -4,7 +4,7 @@ public class CmdAddStaff  implements ActionCmd{
 
 	Staff s;
 	
-	public void execute(String[] cmdParts) throws NumberFormatException {
+	public String execute(String[] cmdParts) throws NumberFormatException {
 		try {
 			if(cmdParts.length==6 && Integer.parseInt(cmdParts[4])>=0) {
 				Restaurant r = Restaurant.getInstance();
@@ -14,27 +14,27 @@ public class CmdAddStaff  implements ActionCmd{
 					//		throw new PositionMissMatchException();
 					if(cmdParts[3].equals("Manager")) {
 						s=new Manager (cmdParts[1],cmdParts[2],cmdParts[3], cmdParts[4], cmdParts[5]);
-						System.out.print("Staff is added.\n");
+						return "Staff is added.";
 					}
 					else if(cmdParts[3].equals("Staff")) {
 						s=new Staff (cmdParts[1],cmdParts[2],cmdParts[3], cmdParts[4], cmdParts[5]);
-						System.out.print("Staff is added.\n");
+						return "Staff is added.";
 					}
 					else {
-						System.out.print("Invalid position!\n");
+						return "Invalid position!";
 					}
 				}
 				else{
 					s=null;
-					System.out.print("Staff ID has been used.\n");
+					return "Staff ID has been used.";
 				}		
 			}
 			else {
-				System.out.print("Invalid input!\n");
+				return "Invalid input!";
 			}
 		}
 		catch(NumberFormatException e) {
-			System.out.print("Invalid salary!\n");
+			return "Invalid salary!";
 		}
 	
 	}
