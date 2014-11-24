@@ -3,8 +3,6 @@ package restaurant;
 public class CmdEditOrder implements ActionCmd, FoodIdValidate{
 
 	Order o;
-	String tableId;
-	String[] foodId;
 	
 	public boolean foodIDIdentification(String[] foodId) {
 		for(int i=0; i < foodId.length ; i++) 
@@ -18,7 +16,10 @@ public class CmdEditOrder implements ActionCmd, FoodIdValidate{
 	
 	public void execute(String[] cmdParts) {
 		if(cmdParts.length>=3) {
-			
+
+			String tableId;
+			String[] foodId = new String[cmdParts.length-2];
+
 			tableId = cmdParts[1];
 			for(int i = 2; i < cmdParts.length; i++) foodId[i - 2] = cmdParts[i];
 			

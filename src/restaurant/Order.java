@@ -15,7 +15,7 @@ public class Order implements Comparable<Order> {
 	}
 
 	public String setOrder() throws NullPointerException {
-		order = "";
+		order = ""; //order here is a string
 		
 		for(int i = 0; i<foodId.length; i++) {	
 			try {
@@ -40,7 +40,7 @@ public class Order implements Comparable<Order> {
 		
 		for(int i=0; i<foodId.length; i++) {
 			try {
-			totalAmount += restaurant.findFood(foodId[i]).getFoodPrice();
+				totalAmount += restaurant.findFood(foodId[i]).getFoodPrice();
 			}
 			catch(NullPointerException e) {
 				totalAmount += 0;

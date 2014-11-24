@@ -8,10 +8,7 @@ import java.io.PrintStream;
 import org.junit.Before;
 import org.junit.Test;
 
-import restaurant.CmdAddOrder;
-import restaurant.Food;
-import restaurant.Order;
-import restaurant.Restaurant;
+import restaurant.*;
 
 
 public class TestCmdOrder {
@@ -32,6 +29,8 @@ public class TestCmdOrder {
 		String[] order2 = {"F001", "F003", "F004", "F005"};
 		Order o1 = new Order("T001", order1);
 		Order o2 = new Order("T002", order2);
+		Restaurant.getInstance().addOrder(o1);
+		Restaurant.getInstance().addOrder(o2);
 	}
 	
 	//addOrder T003 F001 F002
@@ -47,15 +46,15 @@ public class TestCmdOrder {
 	@Test
 	public void TestAddOrderIdDul() throws Exception{
 		setOutput();
-		String[] orderStr = {"addOrder", "T003", "F001", "F002"};
+		String[] orderStr = {"addOrder", "T001", "F001", "F002"};
 		(new CmdAddOrder()).execute(orderStr);
-		assertEquals("Order is added.\n", getOutput());
+		assertEquals("Order ID has been used.\n", getOutput());
 	}
 	
 	@Test
 	public void TestAddOrderFoodNotValid() throws Exception{
 		setOutput();
-		String[] orderStr = {"addOrder", "T003", "F001", "F350"};
+		String[] orderStr = {"addOrder", "T004", "F001", "F350"};
 		(new CmdAddOrder()).execute(orderStr);
 		assertEquals("Invalid food ID!\n", getOutput());
 	}
@@ -65,9 +64,65 @@ public class TestCmdOrder {
 		setOutput();
 		String[] orderStr = {"addOrder", "F002"};
 		(new CmdAddOrder()).execute(orderStr);
-		assertEquals("Order is added.\n", getOutput());
+		assertEquals("Invalid input!\n", getOutput());
 	}
-	
+
+	@Test
+	public void TestEditOrderCorrect() throws Exception{
+		setOutput();
+		String[] orderStr = {"editOrder", "T001", "F001", "F002", "F003", "F004", "F005"};
+		(new CmdEditOrder()).execute(orderStr);
+		assertEquals("Order is edited.\n", getOutput());
+	}
+
+	@Test
+	public void TestEditOrderTableNotValid() throws Exception{
+		setOutput();
+		String[] orderStr = {"editOrder", "T205", "F001", "F002", "F003"};
+		(new CmdEditOrder()).execute(orderStr);
+		assertEquals("Invalid table ID!\n", getOutput());
+	}
+
+	@Test
+	public void TestEditOrderFoodNotValid() throws Exception{
+		setOutput();
+		String[] orderStr = {"editOrder", "T002", "F001", "F002", "F003", "F420", "F005"};
+		(new CmdEditOrder()).execute(orderStr);
+		assertEquals("Invalid food ID!\n", getOutput());
+	}
+
+	@Test
+	public void TestEditOrderInvInput() throws Exception{
+		setOutput();
+		String[] orderStr = {"editOrder", "F005"};
+		(new CmdEditOrder()).execute(orderStr);
+		assertEquals("Invalid input!\n", getOutput());
+	}
+
+	@Test
+	public void TestDeleteOrderCorrect() throws Exception{
+		setOutput();
+		String[] orderStr = {"deleteOrder", "T001"};
+		(new CmdDeleteOrder()).execute(orderStr);
+		assertEquals("Order is deleted.\n", getOutput());
+	}
+
+	@Test
+	public void TestDeleteOrderTableNotValid() throws Exception{
+		setOutput();
+		String[] orderStr = {"deleteOrder", "T500"};
+		(new CmdDeleteOrder()).execute(orderStr);
+		assertEquals("Invalid table ID!\n", getOutput());
+	}
+
+	@Test
+	public void TestDeleteOrderInvInput() throws Exception{
+		setOutput();
+		String[] orderStr = {"deleteOrder", "T002", "F005"};
+		(new CmdDeleteOrder()).execute(orderStr);
+		assertEquals("Invalid input!\n", getOutput());
+	}
+
 	PrintStream oldPrintStream;
 	ByteArrayOutputStream bos;  
 	
