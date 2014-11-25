@@ -28,7 +28,7 @@ import javax.swing.filechooser.FileNameExtensionFilter;
 public class Gui extends JFrame {
 
   private CardLayout layout;
-  private static String panStatus = "mOptions";
+  private static String panStatus = "BrowseFiles";
   private static Gui gui;
   private String[] tIdSelections = {"T001", "T002", "T003", "T004", "T005", "T006", "T007", "T008", "T009", "T010"};
   private String[] fIdSelections = {"F001", "F002", "F003", "F004", "F005", "F006", "F007", "F008", "F009", "F010"};
@@ -230,7 +230,6 @@ public class Gui extends JFrame {
 	mDetailsLabel.setFont(new Font("Garamond",Font.BOLD, 25));
 	mDetailsLabel.setForeground(new Color(27, 129, 105));
 //Details
-	//ID
 	final JLabel mID = new JLabel("ID:");
 	tab.add(mID);
 	mID.setBounds(575, 75, 70, 25);
@@ -262,7 +261,7 @@ public class Gui extends JFrame {
 	mInputName.setForeground(new Color(128, 128, 128));
 	mInputName.setBorder(new EmptyBorder(0, 0, 0, 0));
 	mInputName.setVisible(false);
-	//Order	
+
 	final JLabel mFoodID = new JLabel("Food:");
 	tab.add(mFoodID);
 	mFoodID.setBounds(575, 110, 70, 25);
@@ -282,7 +281,7 @@ public class Gui extends JFrame {
 	mFoodIDScrollPane.setBounds(655, 110, 170, 50);
 	mFoodIDScrollPane.setBorder(new EmptyBorder(0, 0, 0, 0));
 	mFoodIDScrollPane.setVisible(false);
-	//Food	
+	
 	final JLabel mFoodPrice = new JLabel("Price:");
 	tab.add(mFoodPrice);
 	mFoodPrice.setBounds(575, 145, 70, 25);
@@ -298,7 +297,7 @@ public class Gui extends JFrame {
 	mInputFoodPrice.setForeground(new Color(128, 128, 128));
 	mInputFoodPrice.setBorder(new EmptyBorder(0, 0, 0, 0));
 	mInputFoodPrice.setVisible(false);
-	//Ingredient
+
 	final JLabel mIngQuantity = new JLabel("Quantity:");
 	tab.add(mIngQuantity);
 	mIngQuantity.setBounds(575, 180, 70, 25);
@@ -314,7 +313,7 @@ public class Gui extends JFrame {
 	mInputIngQuantity.setForeground(new Color(128, 128, 128));
 	mInputIngQuantity.setBorder(new EmptyBorder(0, 0, 0, 0));
 	mInputIngQuantity.setVisible(false);	
-	//Staff		
+	
 	final JLabel mPosition = new JLabel("Position:");
 	tab.add(mPosition);
 	mPosition.setBounds(575, 145, 70, 25);
@@ -362,13 +361,7 @@ public class Gui extends JFrame {
 	mInputPassword.setFont(new Font("Garamond",Font.BOLD, 20));
 	mInputPassword.setBorder(new EmptyBorder(0, 0, 0, 0));
 	mInputPassword.setForeground(new Color(128, 128, 128));
-	mInputPassword.setVisible(false);
-	
-	
-	
-	
-	
-
+	mInputPassword.setVisible(false);	
 	//Submit	
 	final JButton mSubmit = new JButton("Submit");
 	tab.add(mSubmit);
@@ -438,37 +431,40 @@ public class Gui extends JFrame {
 	//Submit ActionListener
 	mSubmit.addActionListener(new ActionListener() {
 		public void actionPerformed(ActionEvent e) {
+			String str;
+			String[] strArr;
 			if (e.getActionCommand() == "addOrder") {
-				String str = "addOrder " + mInputID.getSelectedItem() + " " + mInputFoodID.getText();
-				String[] strArr = str.split(" ");				
+				str = "addOrder " + mInputID.getSelectedItem() + " " + mInputFoodID.getText();
+				strArr = str.split(" ");				
 				mResult.setText(ExecuteCmd.executeCmd(strArr));
 			}	
 			if (e.getActionCommand() == "editOrder") {
-				String str = "editOrder " + mInputID.getSelectedItem() + " " + mInputFoodID.getText();
-				String[] strArr = str.split(" ");				
+				str = "editOrder " + mInputID.getSelectedItem() + " " + mInputFoodID.getText();
+				strArr = str.split(" ");				
+				mResult.setText(ExecuteCmd.executeCmd(strArr));
+			}
+			if (e.getActionCommand() == "deleteOrder") {
+				str = "deleteOrder " + mInputID.getSelectedItem();
+				strArr = str.split(" ");				
+				mResult.setText(ExecuteCmd.executeCmd(strArr));
+			}
+			if (e.getActionCommand() == "addFood") {
+				str = "addFood " + mInputID.getSelectedItem() + " " + mInputName.getText() + " " + mInputFoodPrice.getText();
+				strArr = str.split(" ");				
+				mResult.setText(ExecuteCmd.executeCmd(strArr));
+			}
+			if (e.getActionCommand() == "editFood") {
+				str = "editFood " + mInputID.getSelectedItem() + " " + mInputName.getText() + " " + mInputFoodPrice.getText();
+				strArr = str.split(" ");				
+				mResult.setText(ExecuteCmd.executeCmd(strArr));
+			}
+			if (e.getActionCommand() == "deleteFood") {
+				str = "deleteFood " + mInputID.getSelectedItem();
+				strArr = str.split(" ");				
 				mResult.setText(ExecuteCmd.executeCmd(strArr));
 			}
 		}
 	});	
-	
-//	mID
-//	mInputID
-//	mName
-//	mInputName
-//	mFoodID
-//	mInputFoodID
-//	mFoodIDScrollPane
-//	mFoodPrice
-//	mInputFoodPrice
-//	mIngQuantity
-//	mInputIngQuantity
-//	mPosition
-//	mInputPosition
-//	mSalary
-//	mInputSalary
-//	mPassword
-//	mInputPassword
-//	mSubmit
 	
 //Order
 	JButton mAddOrder = new JButton("<html><center>Add<br>Order</center></html>");
@@ -484,11 +480,24 @@ public class Gui extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			mID.setVisible(true);
 			mInputID.setVisible(true);
+			mName.setVisible(false);
+			mInputName.setVisible(false);
 			mFoodID.setVisible(true);
 			mFoodIDScrollPane.setVisible(true);
-			mSubmit.setVisible(true);	
+			mFoodPrice.setVisible(false);
+			mInputFoodPrice.setVisible(false);
+			mIngQuantity.setVisible(false);
+			mInputIngQuantity.setVisible(false);
+			mPosition.setVisible(false);
+			mInputPosition.setVisible(false);
+			mSalary.setVisible(false);
+			mInputSalary.setVisible(false);
+			mPassword.setVisible(false);
+			mInputPassword.setVisible(false);
+			mSubmit.setVisible(true);
 			
 			mInputID.setModel(new DefaultComboBoxModel<String>(tIdSelections));
+			mInputFoodID.setText("");
 			mSubmit.setActionCommand("addOrder");			
 		}
 	});
@@ -522,9 +531,24 @@ public class Gui extends JFrame {
 		public void actionPerformed(ActionEvent e) {
 			mID.setVisible(true);
 			mInputID.setVisible(true);
+			mName.setVisible(false);
+			mInputName.setVisible(false);
 			mFoodID.setVisible(true);
 			mFoodIDScrollPane.setVisible(true);
-			mSubmit.setVisible(true);	
+			mFoodPrice.setVisible(false);
+			mInputFoodPrice.setVisible(false);
+			mIngQuantity.setVisible(false);
+			mInputIngQuantity.setVisible(false);
+			mPosition.setVisible(false);
+			mInputPosition.setVisible(false);
+			mSalary.setVisible(false);
+			mInputSalary.setVisible(false);
+			mPassword.setVisible(false);
+			mInputPassword.setVisible(false);
+			mSubmit.setVisible(true);
+			
+			mInputID.setModel(new DefaultComboBoxModel<String>(tIdSelections));
+			mInputFoodID.setText("");
 			mSubmit.setActionCommand("editOrder");
 		}
 	});
@@ -537,6 +561,32 @@ public class Gui extends JFrame {
 	mDeleteOrder.setBackground(new Color(180, 250, 225));
 	mDeleteOrder.setBorder(new EmptyBorder(0, 0, 0, 0));
 	mDeleteOrder.setForeground(new Color(27, 129, 105));
+	
+	mDeleteOrder.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			mID.setVisible(true);
+			mInputID.setVisible(true);
+			mName.setVisible(false);
+			mInputName.setVisible(false);
+			mFoodID.setVisible(false);
+			mFoodIDScrollPane.setVisible(false);
+			mFoodPrice.setVisible(false);
+			mInputFoodPrice.setVisible(false);
+			mIngQuantity.setVisible(false);
+			mInputIngQuantity.setVisible(false);
+			mPosition.setVisible(false);
+			mInputPosition.setVisible(false);
+			mSalary.setVisible(false);
+			mInputSalary.setVisible(false);
+			mPassword.setVisible(false);
+			mInputPassword.setVisible(false);
+			mSubmit.setVisible(true);
+			
+			mInputID.setModel(new DefaultComboBoxModel<String>(tIdSelections));
+			mSubmit.setActionCommand("deleteOrder");
+		}
+	});
+	
 //Food
 	JButton mAddFood = new JButton("<html><center>Add<br>Food</center></html>");
 	tab.add(mAddFood);
@@ -547,6 +597,33 @@ public class Gui extends JFrame {
 	mAddFood.setBorder(new EmptyBorder(0, 0, 0, 0));
 	mAddFood.setForeground(new Color(27, 129, 105));
 	
+	mAddFood.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			mID.setVisible(true);
+			mInputID.setVisible(true);
+			mName.setVisible(true);
+			mInputName.setVisible(true);
+			mFoodID.setVisible(false);
+			mFoodIDScrollPane.setVisible(false);
+			mFoodPrice.setVisible(true);
+			mInputFoodPrice.setVisible(true);
+			mIngQuantity.setVisible(false);
+			mInputIngQuantity.setVisible(false);
+			mPosition.setVisible(false);
+			mInputPosition.setVisible(false);
+			mSalary.setVisible(false);
+			mInputSalary.setVisible(false);
+			mPassword.setVisible(false);
+			mInputPassword.setVisible(false);
+			mSubmit.setVisible(true);
+			
+			mInputID.setModel(new DefaultComboBoxModel<String>(fIdSelections));
+			mInputName.setText("");
+			mInputFoodPrice.setText("");
+			mSubmit.setActionCommand("addFood");
+		}
+	});
+	
 	JButton mListFood = new JButton("<html><center>Menu</center></html>");
 	tab.add(mListFood);
 	mListFood.setFocusPainted(false);	
@@ -555,6 +632,13 @@ public class Gui extends JFrame {
 	mListFood.setBackground(new Color(185, 231, 255));	
 	mListFood.setBorder(new EmptyBorder(0, 0, 0, 0));
 	mListFood.setForeground(new Color(27, 129, 105));
+	
+	mListFood.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			String[] strArr = {"listFood"};
+			mList.setText((ExecuteCmd.executeCmd(strArr)));
+		}
+	});
 	
 	JButton mEditFood = new JButton("<html><center>Edit<br>Food</center></html>");
 	tab.add(mEditFood);
@@ -565,6 +649,33 @@ public class Gui extends JFrame {
 	mEditFood.setBorder(new EmptyBorder(0, 0, 0, 0));
 	mEditFood.setForeground(new Color(27, 129, 105));
 	
+	mEditFood.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			mID.setVisible(true);
+			mInputID.setVisible(true);
+			mName.setVisible(true);
+			mInputName.setVisible(true);
+			mFoodID.setVisible(false);
+			mFoodIDScrollPane.setVisible(false);
+			mFoodPrice.setVisible(true);
+			mInputFoodPrice.setVisible(true);
+			mIngQuantity.setVisible(false);
+			mInputIngQuantity.setVisible(false);
+			mPosition.setVisible(false);
+			mInputPosition.setVisible(false);
+			mSalary.setVisible(false);
+			mInputSalary.setVisible(false);
+			mPassword.setVisible(false);
+			mInputPassword.setVisible(false);
+			mSubmit.setVisible(true);
+			
+			mInputID.setModel(new DefaultComboBoxModel<String>(fIdSelections));
+			mInputName.setText("");
+			mInputFoodPrice.setText("");
+			mSubmit.setActionCommand("editFood");
+		}
+	});
+	
 	JButton mDeleteFood = new JButton("<html><center>Delete<br>Food</center></html>");
 	tab.add(mDeleteFood);
 	mDeleteFood.setFocusPainted(false);	
@@ -573,6 +684,31 @@ public class Gui extends JFrame {
 	mDeleteFood.setBackground(new Color(185, 231, 255));
 	mDeleteFood.setBorder(new EmptyBorder(0, 0, 0, 0));
 	mDeleteFood.setForeground(new Color(27, 129, 105));
+	
+	mDeleteFood.addActionListener(new ActionListener() {
+		public void actionPerformed(ActionEvent e) {
+			mID.setVisible(true);
+			mInputID.setVisible(true);
+			mName.setVisible(false);
+			mInputName.setVisible(false);
+			mFoodID.setVisible(false);
+			mFoodIDScrollPane.setVisible(false);
+			mFoodPrice.setVisible(false);
+			mInputFoodPrice.setVisible(false);
+			mIngQuantity.setVisible(false);
+			mInputIngQuantity.setVisible(false);
+			mPosition.setVisible(false);
+			mInputPosition.setVisible(false);
+			mSalary.setVisible(false);
+			mInputSalary.setVisible(false);
+			mPassword.setVisible(false);
+			mInputPassword.setVisible(false);
+			mSubmit.setVisible(true);
+			
+			mInputID.setModel(new DefaultComboBoxModel<String>(fIdSelections));
+			mSubmit.setActionCommand("deleteFood");
+		}
+	});
 //Ingredient
 	JButton mAddIng = new JButton("<html><center>Add<br>Ingredient</center></html>");
 	tab.add(mAddIng);

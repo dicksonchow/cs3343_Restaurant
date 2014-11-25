@@ -31,12 +31,15 @@ public class Restaurant {
 	}
 	
 //Food
-	public void listFood() {
-		System.out.println(Food.getListingHeader());
-		for (Food f: allFood)
-			System.out.println(f.toString());
+	public String listFood() {
+		String listingHeader = Food.getListingHeader() + "\n";
+		String toString ="";
+		for (Food f: allFood) {
+			toString += f.toString() + "\n";
+		}
+		return listingHeader + toString;
 	}
-
+	
 	public void addFood(Food f) {	
 		allFood.add(f);
 		Collections.sort(allFood);
@@ -91,8 +94,7 @@ public class Restaurant {
 		for (Order o: allOrders) {
 			toString += o.toString() + "\n";
 		}
-		String str = listingHeader + toString;
-		return str;
+		return listingHeader + toString;
 	}
 
 	public void addOrder(Order o) {	

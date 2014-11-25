@@ -1,9 +1,9 @@
 package restaurant;
 
-public class CmdListOrder{
+public class CmdListFood{
 
 	public String execute() {
 		Restaurant restaurant = Restaurant.getInstance();
-		return restaurant.listOrder();
+		return restaurant.listFood();
     }
 }

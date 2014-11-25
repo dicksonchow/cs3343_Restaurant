@@ -11,15 +11,18 @@ public class ExecuteCmd {
 //	    }
 	        
 		
-        if (cmdParts[0].equals("addFood"))
-        	(new CmdAddFood()).execute(cmdParts);
-        if (cmdParts[0].equals("deleteFood"))
-            (new CmdDeleteFood()).execute(cmdParts); 
-        if (cmdParts[0].equals("editFood"))
-            (new CmdEditFood()).execute(cmdParts); 
-        if (cmdParts[0].equals("listMenu"))
-            (new CmdListMenu()).execute(); 
-        
+        if (cmdParts[0].equals("addFood")) {
+        	return (new CmdAddFood()).execute(cmdParts);
+        }
+        if (cmdParts[0].equals("deleteFood")) {
+            return (new CmdDeleteFood()).execute(cmdParts); 
+        }
+        if (cmdParts[0].equals("editFood")) {
+            return (new CmdEditFood()).execute(cmdParts); 
+        }
+        if (cmdParts[0].equals("listFood")) {
+            return (new CmdListFood()).execute(); 
+        }
         
         if (cmdParts[0].equals("addStaff")) 
 //        	if(UserIdentification.userIdentification(inputStaffId) == true) {        	
@@ -65,14 +68,14 @@ public class ExecuteCmd {
             return (new CmdAddOrder()).execute(cmdParts); 
         }
         if (cmdParts[0].equals("listOrder")) {
-            return (new CmdListOrder()).execute(cmdParts);
+            return (new CmdListOrder()).execute();
         }
         if (cmdParts[0].equals("editOrder"))  {     	
             return (new CmdEditOrder()).execute(cmdParts);
 		}
-        if (cmdParts[0].equals("deleteOrder"))
-            (new CmdDeleteOrder()).execute(cmdParts);       
-        
+        if (cmdParts[0].equals("deleteOrder")) {
+            return (new CmdDeleteOrder()).execute(cmdParts);       
+        }
         if (cmdParts[0].equals("rTable"))
             (new CmdRTable()).execute(cmdParts);                
         if (cmdParts[0].equals("listRTable"))

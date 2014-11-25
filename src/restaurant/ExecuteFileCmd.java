@@ -18,8 +18,8 @@ public class ExecuteFileCmd {
             (new CmdDeleteFood()).execute(cmdParts); 
         if (cmdParts[0].equals("editFood"))
             (new CmdEditFood()).execute(cmdParts); 
-        if (cmdParts[0].equals("listMenu"))
-            (new CmdListMenu()).execute(); 
+        if (cmdParts[0].equals("listFood"))
+            (new CmdListFood()).execute(); 
         
         if (cmdParts[0].equals("addStaff"))  
             (new CmdAddStaff()).execute(cmdParts);
@@ -33,7 +33,7 @@ public class ExecuteFileCmd {
         if (cmdParts[0].equals("addOrder"))
             (new CmdAddOrder()).execute(cmdParts);
         if (cmdParts[0].equals("listOrder"))
-            (new CmdListOrder()).execute(cmdParts);
+            (new CmdListOrder()).execute();
         if (cmdParts[0].equals("editOrder"))
             (new CmdEditOrder()).execute(cmdParts);
         if (cmdParts[0].equals("deleteOrder"))
