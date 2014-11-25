@@ -26,37 +26,37 @@ public class TestAuth {
 	@Test
 	public void testValidManagerNotExists(){
 		String b = Authentication.getInstance().validation("M1000000", "4321");
-		assertEquals(b, "Invalid staff ID");
+		assertEquals(b, "Invalid staff ID!");
 	}
 	
 	@Test
 	public void testValidPasswordNotCorrectManager(){
 		String b = Authentication.getInstance().validation("M101", "4321");
-		assertEquals(b, "Invalid password");
+		assertEquals(b, "Invalid password!");
 	}
 	
 	@Test
 	public void testValidPasswordAllCorrectManager(){
 		String b = Authentication.getInstance().validation("M101", "123");
-		assertEquals(b, "Login successfully");
+		assertEquals(b, "Login successfully!");
 	}
 	
 	@Test
 	public void testValidStaffNotExists(){
 		String b = Authentication.getInstance().validation("S1000000", "4321");
-		assertEquals(b, "Invalid staff ID");
+		assertEquals(b, "Invalid staff ID!");
 	}
 	
 	@Test
 	public void testValidPasswordNotCorrectStaff(){
 		String b = Authentication.getInstance().validation("S101", "4321");
-		assertEquals(b, "Invalid password");
+		assertEquals(b, "Invalid password!");
 	}
 	
 	@Test
 	public void testValidPasswordAllCorrectStaff(){
 		String b = Authentication.getInstance().validation("S101", "123");
-		assertEquals(b, "Login successfully");
+		assertEquals(b, "Login successfully!");
 	}
 	
 	@Test

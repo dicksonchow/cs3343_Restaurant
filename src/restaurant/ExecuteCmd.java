@@ -62,15 +62,14 @@ public class ExecuteCmd {
         
         
         if (cmdParts[0].equals("addOrder")) {
-        	CmdAddOrder addOrder = new CmdAddOrder();
-            return addOrder.execute(cmdParts); 
+            return (new CmdAddOrder()).execute(cmdParts); 
         }
         if (cmdParts[0].equals("listOrder")) {
-        	CmdListOrder listOrder = new CmdListOrder();
-            return listOrder.execute(cmdParts);
+            return (new CmdListOrder()).execute(cmdParts);
         }
-        if (cmdParts[0].equals("editOrder"))       	
-        	(new CmdEditOrder()).execute(cmdParts);               
+        if (cmdParts[0].equals("editOrder"))  {     	
+            return (new CmdEditOrder()).execute(cmdParts);
+		}
         if (cmdParts[0].equals("deleteOrder"))
             (new CmdDeleteOrder()).execute(cmdParts);       
         

@@ -21,14 +21,14 @@ public class Authentication {
 			if(restaurant.findStaff(inputStaffId) != null) {
 				staff = restaurant.findStaff(inputStaffId);		
 				if(staff.getStaffPassword().equals(inputStaffPw)) {
-					return "Login successfully";
+					return "Login successfully!";
 				}
 				else {
-					return "Invalid password";
+					return "Invalid password!";
 				}
 			}
 			else {
-				return "Invalid staff ID";
+				return "Invalid staff ID!";
 			}
 	}
 	
