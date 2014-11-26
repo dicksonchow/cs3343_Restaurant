@@ -14,7 +14,7 @@ public class CmdRTable {
 			}
 			else{
 				t=null;
-				return "Table has been reserved.";
+				return "Table is unavailable.";
 			}	
 		}
 		else {

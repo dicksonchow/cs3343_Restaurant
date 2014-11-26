@@ -7,7 +7,6 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
-
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -1136,7 +1135,7 @@ public class Gui extends JFrame {
 			mInputPosition.setText("");
 			mInputSalary.setText("");
 			mInputPassword.setText("");
-			mSubmit.setActionCommand("deleteStaff");
+			mSubmit.setActionCommand("editStaff");
 		}
 	});
 		

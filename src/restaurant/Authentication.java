@@ -32,8 +32,4 @@ public class Authentication {
 			}
 	}
 	
-	/*public String getInputStaffId() {
-		return inputStaffId;
-	}*/
-	
 }

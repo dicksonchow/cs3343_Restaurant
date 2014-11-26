@@ -4,14 +4,7 @@ public class ExecuteFileCmd {
 	
 //	private static String inputStaffId;
 	
-	public static void executeFileCmd(String[] cmdParts) {
-		InputFormat.inputFormat(cmdParts);
-		
-//        if (cmdParts[0].equals("options")) {
-//        	inputStaffId = Login.getInputStaffId();
-//        	CmdOptions.options(inputStaffId);
-//        }
-        
+	public static void executeFileCmd(String[] cmdParts) {        
         if (cmdParts[0].equals("addFood"))
         	(new CmdAddFood()).execute(cmdParts);
         if (cmdParts[0].equals("deleteFood"))
