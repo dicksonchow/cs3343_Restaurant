@@ -72,7 +72,7 @@ public class Staff implements Comparable<Staff> {
 	
 	@Override
 	public String toString() {
-		return String.format("%-15s%-15s%-15s%-15s", sid, sname, position, "$" + salary);
+		return String.format("%-20s%-20s%-20s%-15s", sid, sname, position, "$" + salary);
 	}
 	
 	public static String getListingHeader() {

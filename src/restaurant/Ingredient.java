@@ -33,7 +33,7 @@ public class Ingredient implements Comparable<Ingredient> {
 	
 	@Override
 	public String toString() {
-		return String.format("%-18s%-18s%-15s%-15s", iid, iname, iquantity, "$" + iprice);
+		return String.format("%-30s%-30s%-20s%-15s", iid, iname, iquantity, "$" + iprice);
 	}
 	
 	public static String getListingHeader() {
