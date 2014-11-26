@@ -6,7 +6,7 @@ public class CmdAddIngredient implements ActionCmd{
 	
 	public String execute(String[] cmdParts) throws NumberFormatException {
 		try {
-			if(cmdParts.length==5 && Integer.parseInt(cmdParts[3])>=0 && Integer.parseInt(cmdParts[4])>=0) {
+			if(cmdParts.length==5 && !cmdParts[2].trim().equals("") && Integer.parseInt(cmdParts[3])>=0 && Integer.parseInt(cmdParts[4])>=0) {
 				Restaurant r = Restaurant.getInstance();
 				Ingredient ingredient = r.findIngredient(cmdParts[1]);
 				if(ingredient==null){

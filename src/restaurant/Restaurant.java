@@ -59,12 +59,15 @@ public class Restaurant {
 	}
 	
 //Staff
-	public void listStaff() {
-		System.out.println(Staff.getListingHeader());
-		for (Staff s: allStaffs)
-			System.out.println(s.toString());
+	public String listStaff() {
+		String listingHeader = Staff.getListingHeader() + "\n";
+		String toString ="";
+		for (Staff s: allStaffs) {
+			toString += s.toString() + "\n";
+		}
+		return listingHeader + toString;
 	}
-
+	
 	public void addStaff(Staff s) {	
 		allStaffs.add(s);
 		Collections.sort(allStaffs);
@@ -120,10 +123,13 @@ public class Restaurant {
 	}
 	
 //Reserved Table	
-	public void listRTable() {
-		System.out.println(ReservedTable.getListingHeader());
-		for (ReservedTable t: allRTables)
-			System.out.println(t.toString());
+	public String listRTable() {
+		String listingHeader = ReservedTable.getListingHeader() + "\n";
+		String toString ="";
+		for (ReservedTable t: allRTables) {
+			toString += t.toString() + "\n";
+		}
+		return listingHeader + toString;
 	}
 	
 	public void addRTable(ReservedTable t) {	
@@ -145,12 +151,15 @@ public class Restaurant {
 	}
 	
 //Ingredient
-	public void listIngredient() {
-		System.out.println(Ingredient.getListingHeader());
-		for (Ingredient i: allIngredients)
-			System.out.println(i.toString());
+	public String listIngredient() {
+		String listingHeader = Ingredient.getListingHeader() + "\n";
+		String toString ="";
+		for (Ingredient i: allIngredients) {
+			toString += i.toString() + "\n";
+		}
+		return listingHeader + toString;
 	}
-
+	
 	public void addIngredient(Ingredient i) {	
 		allIngredients.add(i);
 		Collections.sort(allIngredients);

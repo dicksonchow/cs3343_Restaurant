@@ -2,9 +2,9 @@ package restaurant;
 
 public class CmdListRTable {
 
-	public void execute() {
+	public String execute() {
 		Restaurant restaurant = Restaurant.getInstance();
-		restaurant.listRTable();
+		return restaurant.listRTable();
     }
 	
 }

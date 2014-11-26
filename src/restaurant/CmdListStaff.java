@@ -2,8 +2,8 @@ package restaurant;
 
 public class CmdListStaff{
 
-	public void execute() {
+	public String execute() {
 		Restaurant restaurant = Restaurant.getInstance();
-		restaurant.listStaff();
+		return restaurant.listStaff();
     }
 }

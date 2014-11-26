@@ -26,7 +26,7 @@ public class ReservedTable implements Comparable<ReservedTable> {
 	}
 	
 	public static String getListingHeader() {
-	return String.format("%-15s", "Table_ID(Reserved)");
+	return String.format("%-15s", "Table_ID(Reserved Table)");
 	}
 	
 	
