@@ -6,11 +6,11 @@ public class CmdDeleteStaff {
 		Restaurant r = Restaurant.getInstance();
 		Staff staff = r.findStaff(cmdParts[1]);
 		if(staff==null){ 
-			return "Invalid staff ID!\n";
+			return "Invalid staff ID!";
 		}
 		else{
 			r.removeStaff(staff);
-			return "Staff is deleted.\n";
+			return "Staff is deleted.";
 		}
 
     }

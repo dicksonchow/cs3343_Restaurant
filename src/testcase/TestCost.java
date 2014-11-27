@@ -1,14 +1,9 @@
 package testcase;
 
 import static org.junit.Assert.*;
-
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import restaurant.CmdCost;
 import restaurant.Cost;
 import restaurant.Ingredient;
@@ -57,26 +52,9 @@ public class TestCost {
 	
 	@Test
 	public void testCmdCost() throws Exception{
-		setOutput();
-		(new CmdCost()).execute(); 
 		int cost = 50 + 30 + 20;
 		String exp = String.format("%-15s\n", "$" + cost);
-		assertEquals(exp, getOutput());
+		assertEquals(exp, (new CmdCost()).execute());
 	}
-	
-	PrintStream oldPrintStream;
-	ByteArrayOutputStream bos;  
-	
-	private void setOutput() throws Exception
-	{
-		oldPrintStream = System.out;
-		bos = new ByteArrayOutputStream();  
-		System.setOut(new PrintStream(bos)); 
-	}
-	
-	private String getOutput() //throws Exception
-	{
-		System.setOut(oldPrintStream);
-		return bos.toString();
-	}
+
 }

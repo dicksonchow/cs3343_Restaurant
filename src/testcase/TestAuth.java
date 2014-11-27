@@ -1,10 +1,8 @@
 package testcase;
 
 import static org.junit.Assert.*;
-
 import org.junit.Before;
 import org.junit.Test;
-
 import restaurant.Authentication;
 import restaurant.CmdAddStaff;
 import restaurant.Identification;

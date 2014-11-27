@@ -1,13 +1,8 @@
 package testcase;
 
 import static org.junit.Assert.*;
-
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-
 import org.junit.Before;
 import org.junit.Test;
-
 import restaurant.Manager;
 import restaurant.Staff;
 
@@ -88,101 +83,29 @@ public class TestStaff {
 	@Test
 	public void StaffToString(){
 		String str = s.toString();
-		String toBeCom = String.format("%-15s%-15s%-15s%-15s", "S010", "Michael", "Staff", "$" + "2000");
+		String toBeCom = String.format("%-13s%-13s%-13s%-13s", "S010", "Michael", "Staff", "$" + "2000");
 		assertEquals(toBeCom, str);
 	}
 
 	@Test
 	public void ManagerToString(){
 		String str = m.toString();
-		String toBeCom = String.format("%-15s%-15s%-15s%-15s","M020", "Jack", "Manager", "$" + "200000");
+		String toBeCom = String.format("%-13s%-13s%-13s%-13s","M020", "Jack", "Manager", "$" + "200000");
 		assertEquals(toBeCom, str);
 	}
 	
 	@Test
 	public void StaffGetListingHeader(){
 		String str = s.toString();
-		String toBeCom = String.format("%-15s%-15s%-15s%-15s", "S010", "Michael", "Staff", "$" + "2000");
+		String toBeCom = String.format("%-13s%-13s%-13s%-13s", "S010", "Michael", "Staff", "$" + "2000");
 		assertEquals(toBeCom, str);
 	}
 
 	@Test
 	public void ManagerGetListingHeader(){
 		String str = m.toString();
-		String toBeCom = String.format("%-15s%-15s%-15s%-15s","M020", "Jack", "Manager", "$" + "200000");
+		String toBeCom = String.format("%-13s%-13s%-13s%-13s","M020", "Jack", "Manager", "$" + "200000");
 		assertEquals(toBeCom, str);
 	}
-	
-	@Test
-	public void StaffOptionList() throws Exception{
-		setOutput();
-		s.printOptions();
-		String ExpectedOpt = "\n--------------- Options ----------------\n"
-				+ "a. List Order\n"
-				+ "b. Add Order\n"
-				+ "c. Edit Order\n"
-				+ "d. Delete Order\n"
-				+ "\ne. List Menu\n"
-				+ "f. Add Food\n"
-				+ "g. Edit Food\n"
-				+ "h. Delete Food\n"
-				+ "\ni. List Ingredient\n"
-				+ "j. Add Ingredient\n"
-				+ "k. Edit Ingredient\n"
-				+ "l. Delete Ingredient\n"
-				+ "\nm. List Reserved Table\n"
-				+ "n. Reserve Table\n"
-				+ "o. Edit Reserved Table\n"
-				+ "p. Delete Reserved Table\n"
-				+ "\n(You may enter \"options\" to check the options again.)\n";
-		assertEquals(ExpectedOpt, getOutput());
-	}
-	
-	@Test
-	public void ManagerOptionList() throws Exception{
-		setOutput();
-		m.printOptions();
-		String ExpectedOpt = "\n--------------- Options ----------------\n"
-				+ "a. List Order\n"
-				+ "b. Add Order\n"
-				+ "c. Edit Order\n"
-				+ "d. Delete Order\n"
-				+ "\ne. List Menu\n"
-				+ "f. Add Food\n"
-				+ "g. Edit Food\n"
-				+ "h. Delete Food\n"
-				+ "\ni. List Ingredient\n"
-				+ "j. Add Ingredient\n"
-				+ "k. Edit Ingredient\n"
-				+ "l. Delete Ingredient\n"
-				+ "\nm. List Reserved Table\n"
-				+ "n. Reserve Table\n"
-				+ "o. Edit Reserved Table\n"
-				+ "p. Delete Reserved Table\n"
-				+ "\nq. List Staff\n"
-				+ "r. Add Staff\n"
-				+ "s. Edit Staff\n"
-				+ "t. Delete Staff\n"
-				+ "\nu. Revenue\n"
-				+ "v. Cost\n"
-				+ "w. Profit\n"
-				+ "\n(You may enter \"options\" to check the options again.)\n";
-		assertEquals(ExpectedOpt, getOutput());
-	}
-	
-	PrintStream oldPrintStream;
-	ByteArrayOutputStream bos;  
-	
-	private void setOutput() throws Exception
-	{
-		oldPrintStream = System.out;
-		bos = new ByteArrayOutputStream();  
-		System.setOut(new PrintStream(bos)); 
-	}
-	
-	private String getOutput() //throws Exception
-	{
-		System.setOut(oldPrintStream);
-		return bos.toString();
-	}
+
 }

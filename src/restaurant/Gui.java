@@ -7,6 +7,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.FileNotFoundException;
+
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
@@ -400,7 +401,7 @@ public class Gui extends JFrame {
 	
 	final JTextArea mList = new JTextArea("");
 	tab.add(mList);
-	mList.setFont(new Font("Garamond",Font.BOLD, 17));
+	mList.setFont(new Font("Consolas",Font.PLAIN, 15));
 	mList.setForeground(new Color(255, 255, 255));
 	mList.setBackground(new Color(30, 140, 149));
 	
@@ -1320,7 +1321,7 @@ public class Gui extends JFrame {
 	
 	final JTextArea List = new JTextArea("");
 	tab.add(List);
-	List.setFont(new Font("Garamond",Font.BOLD, 17));
+	List.setFont(new Font("Consolas",Font.PLAIN, 15));
 	List.setForeground(new Color(255, 255, 255));
 	List.setBackground(new Color(30, 140, 149));
 	

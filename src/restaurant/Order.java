@@ -71,11 +71,11 @@ public class Order implements Comparable<Order> {
 	public String toString() {
 		setOrder();
 		setTotalAmount();
-		return String.format("%-20s%-15s%-50s", tableId,  "$" +totalAmount, order);
+		return String.format("%-13s%-13s%-40s", tableId,  "$" +totalAmount, order);
 	}
 	
 	public static String getListingHeader() {
-	return String.format("%-15s%-15s%-50s", "Table_ID", "Total", "Order");
+	return String.format("%-13s%-13s%-40s", "Table_ID", "Total", "Order");
 	}
 	
 }

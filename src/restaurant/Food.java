@@ -35,11 +35,11 @@ public class Food implements Comparable<Food> {
 	
 	@Override
 	public String toString() {
-		return String.format("%-20s%-20s%-15s", fid, fname, "$" + fprice);
+		return String.format("%-13s%-15s%-15s", fid, fname, "$" + fprice);
 	}
 	
 	public static String getListingHeader() {
-	return String.format("%-15s%-15s%-15s", "Food_ID", "Food_Name", "Price");
+	return String.format("%-13s%-15s%-15s", "Food_ID", "Food_Name", "Price");
 	}
 	
 }

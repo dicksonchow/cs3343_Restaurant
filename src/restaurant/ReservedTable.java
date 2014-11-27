@@ -22,11 +22,11 @@ public class ReservedTable implements Comparable<ReservedTable> {
 	
 	@Override
 	public String toString() {
-		return String.format("%-15s", tid);
+		return String.format("%-25s", tid);
 	}
 	
 	public static String getListingHeader() {
-	return String.format("%-15s", "Table_ID(Reserved Table)");
+	return String.format("%-25s", "Table_ID(Reserved Table)");
 	}
 	
 	

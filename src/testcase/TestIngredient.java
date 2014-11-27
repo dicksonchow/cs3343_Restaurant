@@ -32,14 +32,15 @@ public class TestIngredient {
 	@Test
 	public void testToString(){
 		String toString = i1.toString();
-		String toBeTest = String.format("%-18s%-18s%-15s%-15s", "001", "fish", "10", "$" + "20");
+		String toBeTest = String.format("%-15s%-18s%-13s%-13s", "001", "fish", "10", "$" + "20");
 		assertEquals(toBeTest, toString);
 	}
 	
+	@SuppressWarnings("static-access")
 	@Test
 	public void testListingHeading(){
 		String toString = i1.getListingHeader();
-		String toBeTest = String.format("%-18s%-18s%-15s%-15s", "Ingredient_ID", "Ingredient_Name", "Quantity", "Price");
+		String toBeTest = String.format("%-15s%-18s%-13s%-13s", "Ingredient_ID", "Ingredient_Name", "Quantity", "Price");
 		assertEquals(toBeTest, toString);
 	}
 	

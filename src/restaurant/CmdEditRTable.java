@@ -15,7 +15,7 @@ public class CmdEditRTable {
 			if(newRTable==null){ 
 				r.removeRTable(rTable);
 				t=new ReservedTable (cmdParts[2]);
-				return "Table is edited.";
+				return "Table reservation is edited.";
 			}
 			else {
 				return cmdParts[2] + " is unavailable.";

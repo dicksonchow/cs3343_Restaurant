@@ -9,9 +9,6 @@ import restaurant.Food;
 import restaurant.Order;
 import restaurant.Restaurant;
 
-/**
- * Created by root on 11/24/14.
- */
 public class TestOrder {
 
     private Food f1;
@@ -117,21 +114,21 @@ public class TestOrder {
     @Test
     public void TestToString_1(){
         String actual = o1.toString();
-        String expected = String.format("%-15s%-15s%-50s", "T001", "$20", "Sushi");
+        String expected = String.format("%-13s%-13s%-40s", "T001", "$20", "Sushi");
         assertEquals(expected, actual);
     }
 
     @Test
     public void TestToString_2(){
         String actual = o2.toString();
-        String expected = String.format("%-15s%-15s%-50s", "T002", "$55", "CheeseBurger, Sushi, Sandwich, Apple Pie");
+        String expected = String.format("%-13s%-13s%-40s", "T002", "$55", "CheeseBurger, Sushi, Sandwich, Apple Pie");
         assertEquals(expected, actual);
     }
 
     @Test
     public void TestGetListHeader(){
         String actual = Order.getListingHeader();
-        String expected = String.format("%-15s%-15s%-50s", "Table_ID", "Total", "Order");
+        String expected = String.format("%-13s%-13s%-40s", "Table_ID", "Total", "Order");
         assertEquals(expected, actual);
     }
 }

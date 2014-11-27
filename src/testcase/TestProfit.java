@@ -4,15 +4,8 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import restaurant.*;
-
-import java.io.ByteArrayOutputStream;
-import java.io.PrintStream;
-
 import static org.junit.Assert.assertEquals;
 
-/**
- * Created by root on 11/24/14.
- */
 public class TestProfit {
 
     private Ingredient i1;
@@ -84,7 +77,7 @@ public class TestProfit {
     }
 
     @Test
-    public void TestProfit() {
+    public void TestProfitAmount() {
         int actual = Profit.getInstance().setProfit();
         int expected = 20 + 30 + 20 + 20 + 20 + 10 + 5 + 20 + 30 + 20 + 10 + 5 - (20 + 30 + 50);
         assertEquals(expected, actual);
@@ -100,26 +93,8 @@ public class TestProfit {
 
     @Test
     public void TestCmdProfit() throws Exception{
-        setOutput();
-        (new CmdProfit()).execute();
         int exp_value = 20 + 30 + 20 + 20 + 20 + 10 + 5 + 20 + 30 + 20 + 10 + 5 - (20 + 30 + 50);
         String expected =  String.format("%-15s\n" , "$" + exp_value);
-        assertEquals(expected, getOutput());
-    }
-
-
-    PrintStream oldPrintStream;
-    ByteArrayOutputStream bos;
-
-    private void setOutput() throws Exception {
-        oldPrintStream = System.out;
-        bos = new ByteArrayOutputStream();
-        System.setOut(new PrintStream(bos));
-    }
-
-    private String getOutput() //throws Exception
-    {
-        System.setOut(oldPrintStream);
-        return bos.toString();
+        assertEquals(expected, (new CmdProfit()).execute());
     }
 }

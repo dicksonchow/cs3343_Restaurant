@@ -10,25 +10,25 @@ public class CmdEditStaff {
 				Restaurant r = Restaurant.getInstance();
 				Staff staff = r.findStaff(cmdParts[1]); 
 				if(staff==null){ 
-					return "Invalid staff ID!\n";
+					return "Invalid staff ID!";
 				}		
 				else{				
 					if(!cmdParts[3].equals("Manager") && !cmdParts[3].equals("Staff")){
-						return "Invalid position!\n";
+						return "Invalid position!";
 					}
 					else {			
 						r.removeStaff(staff);
 						s=new Staff (cmdParts[1], cmdParts[2], cmdParts[3], cmdParts[4], cmdParts[5]);
-						return "Staff is edited.\n";
+						return "Staff is edited.";
 					}
 				}		
 			}
 			else {
-				return "Invalid input!\n";
+				return "Invalid input!";
 			}
 		}
 		catch(NumberFormatException e) {
-			return "Invalid salary!\n";
+			return "Invalid salary!";
 		}	
 	}
 	
