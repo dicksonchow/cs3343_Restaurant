@@ -1,8 +1,8 @@
 package restaurant;
 
-public class CmdListFood{
+public class CmdListFood implements ListingAndCalCmd{
 
-	public String execute() implements ListingAndCalCmd{
+	public String execute() {
 		Restaurant restaurant = Restaurant.getInstance();
 		return restaurant.listFood();
     }
