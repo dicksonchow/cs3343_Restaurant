@@ -10,17 +10,24 @@ import restaurant.Restaurant;
 public class TestRestaurant {
 
 	private Restaurant r = Restaurant.getInstance();
+	private Food f1;
+	private Food f2;
+	private Food f3;
 	
 	@Before
 	public void setUp() throws Exception {	
-		Food f1 = new Food("F001", "CheeseBurger", "20");
-		Food f2 = new Food("F002", "Hamburger", "30");
+		f1 = new Food("F001", "CheeseBurger", "20");
+		f2 = new Food("F002", "Hamburger", "30");
 		Restaurant.getInstance().addFood(f1);
 		Restaurant.getInstance().addFood(f2);
 	}
 	
 	@After
-	public void tearDown() {}
+	public void tearDown() {
+		Restaurant.getInstance().removeFood(f1);
+		Restaurant.getInstance().removeFood(f2);
+		Restaurant.getInstance().removeFood(f3);
+	}
 	
 //Test Food	
 	@Test
@@ -36,14 +43,23 @@ public class TestRestaurant {
 	@Test
 	public void testRestaurantAddFood() throws Exception 
 	{
-		Food f3 = new Food("F003", "Fish", "40");
+		f3 = new Food("F003", "Fish", "40");
 		r.addFood(f3);
 		String result = r.getFoodArrayList().toString();
 		String toString1 = "F001         CheeseBurger   $20            " + ", ";
 		String toString2 = "F002         Hamburger      $30            " + ", ";
-		String toString3 = "F003         Fish           $40            " + ", ";
+		String toString3 = "F003         Fish           $40            ";
 		String listFood = "[" + toString1 + toString2 + toString3 + "]";
-		assertEquals(listFood, result);
-		
+		assertEquals(listFood, result);	
+	}
+	
+	@Test
+	public void testRestaurantRemoveFood() throws Exception 
+	{
+		r.removeFood(f1);
+		String result = r.getFoodArrayList().toString();
+		String toString2 = "F002         Hamburger      $30            ";
+		String listFood = "[" + toString2 + "]";
+		assertEquals(listFood, result);	
 	}
 }
