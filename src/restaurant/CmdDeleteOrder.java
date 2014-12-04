@@ -1,6 +1,6 @@
 package restaurant;
 
-public class CmdDeleteOrder implements ActionCmd{
+public class CmdDeleteOrder {
 
 	public String execute(String[] cmdParts) {
 		Restaurant r = Restaurant.getInstance();

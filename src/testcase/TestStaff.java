@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import restaurant.Manager;
+import restaurant.Restaurant;
 import restaurant.Staff;
 
 public class TestStaff {
@@ -19,6 +20,8 @@ public class TestStaff {
 	public void setUp(){
 		s = new Staff("S001", "Michael", "Staff", "2000", "abcd1234");
 		m = new Manager("M001", "Jack", "Manager", "200000", "54321");
+		Restaurant.getInstance().addStaff(s);
+		Restaurant.getInstance().addStaff(m);
 	}
 	
 	@After

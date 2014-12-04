@@ -1,6 +1,6 @@
 package restaurant;
 
-public class CmdListOrder implements ListingAndCalCmd{
+public class CmdListOrder{
 
 	public String execute() {
 		Restaurant restaurant = Restaurant.getInstance();

@@ -20,11 +20,16 @@ public class TestRevenue {
         f1 = new Food("F001", "CheeseBurger", "20");
         f2 = new Food("F002", "Pizza", "30");
         f3 = new Food("F003", "Sushi", "15");
+		Restaurant.getInstance().addFood(f1);
+		Restaurant.getInstance().addFood(f2);
+		Restaurant.getInstance().addFood(f3);
 
         String[] order1 = {"F001", "F002", "F003"};
         o1 = new Order("T001", order1);
         String[] order2 = {"F001", "F003"};
         o2 = new Order("T002", order2);    
+		Restaurant.getInstance().addOrder(o1);
+		Restaurant.getInstance().addOrder(o2);
     }
 
     @After

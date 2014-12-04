@@ -1,9 +1,12 @@
 package testcase;
 
 import static org.junit.Assert.assertEquals;
+
 import org.junit.Before;
 import org.junit.Test;
+
 import restaurant.Manager;
+import restaurant.Restaurant;
 import restaurant.Staff;
 import restaurant.UserIdentification;
 
@@ -16,8 +19,10 @@ public class TestUserIdentification {
 		 *After the user successfully logins, UserIdentification will be implemented.
 		 */
 
-		new Manager("M001", "Jack", "Manager", "15000", "123");
-		new Staff("S001", "Rose", "Staff", "9000", "123");
+		Manager m = new Manager("M001", "Jack", "Manager", "15000", "123");
+		Staff s = new Staff("S001", "Rose", "Staff", "9000", "123");
+		Restaurant.getInstance().addStaff(m);
+		Restaurant.getInstance().addStaff(s);
 	}
 	
 	public void tearDown() {}
