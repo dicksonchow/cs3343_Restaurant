@@ -1,22 +1,23 @@
 package testcase;
 
 import static org.junit.Assert.*;
+
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import restaurant.CmdAddStaff;
 import restaurant.CmdDeleteStaff;
+import restaurant.Staff;
 
 public class TestCmdDeleteStaff {
 
 	@Before
 	public void setUp() throws Exception {
 		//Staff must exist before deleting staff.
-		
-		String[] addStaff = {"addStaff", "M001", "Jack", "Manager", "15000", "123"};
-		CmdAddStaff cmd = new CmdAddStaff();
-		cmd.execute(addStaff);
+
+		new Staff("M001", "Jack", "Manager", "15000", "123");
 	}
 	
+	@After
 	public void tearDown() {}
 
 	/*CmdDeleteStaff format: "deleteStaff", Staff_ID

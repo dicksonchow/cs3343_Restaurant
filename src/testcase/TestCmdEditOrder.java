@@ -2,12 +2,12 @@ package testcase;
 
 import static org.junit.Assert.*;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import restaurant.CmdAddFood;
-import restaurant.CmdAddOrder;
 import restaurant.CmdEditOrder;
+import restaurant.Food;
+import restaurant.Order;
 
 public class TestCmdEditOrder {
 
@@ -15,22 +15,16 @@ public class TestCmdEditOrder {
 	public void setUp() throws Exception {
 		//Order must exist before editing order.
 		
-		String[] addFood1 = {"addFood", "F001", "CheeseBurger", "20"};
-		CmdAddFood cmd1 = new CmdAddFood();
-		cmd1.execute(addFood1);
+		new Food("F001", "CheeseBurger", "20");
+		new Food("F002", "Pizza", "30");
+		new Food("F003", "Sushi", "10");
 		
-		String[] addFood2 = {"addFood", "F002", "Pizza", "30"};
-		CmdAddFood cmd2 = new CmdAddFood();
-		cmd2.execute(addFood2);
-		
-		String[] addFood3 = {"addFood", "F003", "Sushi", "20"};
-		CmdAddFood cmd3 = new CmdAddFood();
-		cmd3.execute(addFood3);
-		
-		String[] addOrder = {"addOrder", "T001", "F001", "F002", "F003"};
-		CmdAddOrder cmd4 = new CmdAddOrder();
-		cmd4.execute(addOrder);
+		String[] addOrder = {"F001", "F002", "F003"};
+		new Order("T001", addOrder);
 	}
+	
+	@After
+	public void tearDown() {}
 	
 	/*CmdEditOrder format: "editOrder", Order_ID, Food_ID...(unrestricted number of Food_IDs)
 	 *Order_ID is selected by user. Food_ID is inputed by user.

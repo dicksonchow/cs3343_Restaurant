@@ -1,26 +1,24 @@
 package testcase;
 
 import static org.junit.Assert.*;
+
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import restaurant.CmdAddStaff;
 import restaurant.CmdListStaff;
+import restaurant.Staff;
 
 public class TestCmdListStaff {
 
 	@Before
 	public void setUp() throws Exception {
 		//Staff must exist before listing Staff.
-		
-		String[] addStaff1 = {"addStaff", "M001", "Jack", "Manager", "15000", "123"};
-		CmdAddStaff cmd1 = new CmdAddStaff();
-		cmd1.execute(addStaff1);
-		
-		String[] addStaff2 = {"addStaff", "S001", "Mary", "Staff", "8000", "123"};
-		CmdAddStaff cmd2 = new CmdAddStaff();
-		cmd2.execute(addStaff2);
+
+		new Staff("M001", "Jack", "Manager", "15000", "123");
+		new Staff("S001", "Mary", "Staff", "8000", "123");
 	}
 	
+	@After
 	public void tearDown() {}
 
 	//CmdListStaff format: "listStaff"

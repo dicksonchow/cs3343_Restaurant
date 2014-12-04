@@ -2,8 +2,10 @@ package testcase;
 
 import static org.junit.Assert.*;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
 import restaurant.CmdAddFood;
 
 public class TestCmdAddFood {
@@ -11,6 +13,7 @@ public class TestCmdAddFood {
 	@Before
 	public void setUp() throws Exception {}
 	
+	@After
 	public void tearDown() {}
 
 	/*CmdAddFood format: "addFood", Food_ID, Food_Name, Food_Price

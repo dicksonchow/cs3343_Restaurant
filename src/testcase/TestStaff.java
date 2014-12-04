@@ -1,8 +1,11 @@
 package testcase;
 
 import static org.junit.Assert.*;
+
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
 import restaurant.Manager;
 import restaurant.Staff;
 
@@ -14,98 +17,118 @@ public class TestStaff {
 
 	@Before
 	public void setUp(){
-		Staff s = new Staff("S010", "Michael", "Staff", "2000", "abcd1234");
-		Manager m = new Manager("M020", "Jack", "Manager", "200000", "54321");
-		this.s = s;
-		this.m = m;
+		s = new Staff("S001", "Michael", "Staff", "2000", "abcd1234");
+		m = new Manager("M001", "Jack", "Manager", "200000", "54321");
 	}
 	
+	@After
+	public void teardown(){}
+	
 	@Test
-	public void StaffGetName(){
+	public void testStaffGetStaffName(){
 		String name = s.getStaffName();
 		assertEquals("Michael", name);
 	}
 	
 	@Test
-	public void ManagerGetName(){
+	public void testStaffGetManagerName(){
 		String name = m.getStaffName();
 		assertEquals("Jack", name);
 	}
 	
 	@Test
-	public void StaffGetId(){
+	public void testStaffGetStaffId(){
 		String id = s.getStaffID();
-		assertEquals("S010", id);
+		assertEquals("S001", id);
 	}
 
 	@Test
-	public void ManagerGetId(){
+	public void testStaffGetManagerId(){
 		String id = m.getStaffID();
-		assertEquals("M020", id);
+		assertEquals("M001", id);
 	}
 	
 	@Test
-	public void StaffGetPos(){
+	public void testStaffGetStaffPosition(){
 		String pos = s.getPosition();
 		assertEquals("Staff", pos);
 	}
 
 	@Test
-	public void ManagerGetPos(){
+	public void testStaffGetManagerPosition(){
 		String pos = m.getPosition();
 		assertEquals("Manager", pos);
 	}
 	
 	@Test
-	public void StaffGetSalary(){
+	public void testStaffGetStaffSalary(){
 		int sal = s.getStaffSalary();
 		assertEquals(2000, sal);
 	}
 
 	@Test
-	public void ManagerGetSalary(){
+	public void testStaffGetManagerSalary(){
 		int sal = m.getStaffSalary();
 		assertEquals(200000, sal);
 	}
 	
 	@Test
-	public void StaffGetPasswd(){
+	public void testStaffGetStaffPasswd(){
 		String pw = s.getStaffPassword();
 		assertEquals("abcd1234", pw);
 	}
 
 	@Test
-	public void ManagerGetPasswd(){
+	public void testStaffGetManagerPasswd(){
 		String pw = m.getStaffPassword();
 		assertEquals("54321", pw);
 	}
 	
 	@Test
-	public void StaffToString(){
+	public void testStaffToStringStaff(){
 		String str = s.toString();
-		String toBeCom = String.format("%-13s%-13s%-13s%-13s", "S010", "Michael", "Staff", "$" + "2000");
-		assertEquals(toBeCom, str);
+		String expectedResult = "S001         Michael      Staff        $2000        ";
+		assertEquals(expectedResult, str);
 	}
 
 	@Test
-	public void ManagerToString(){
+	public void testStaffToStringManager(){
 		String str = m.toString();
-		String toBeCom = String.format("%-13s%-13s%-13s%-13s","M020", "Jack", "Manager", "$" + "200000");
-		assertEquals(toBeCom, str);
+		String expectedResult = "M001         Jack         Manager      $200000      ";
+		assertEquals(expectedResult, str);
 	}
 	
 	@Test
-	public void StaffGetListingHeader(){
+	public void testStaffGetListingHeaderStaff(){
 		String str = s.toString();
-		String toBeCom = String.format("%-13s%-13s%-13s%-13s", "S010", "Michael", "Staff", "$" + "2000");
-		assertEquals(toBeCom, str);
+		String expectedResult = "S001         Michael      Staff        $2000        ";
+		assertEquals(expectedResult, str);
 	}
 
 	@Test
-	public void ManagerGetListingHeader(){
+	public void testStaffGetListingHeaderManager(){
 		String str = m.toString();
-		String toBeCom = String.format("%-13s%-13s%-13s%-13s","M020", "Jack", "Manager", "$" + "200000");
-		assertEquals(toBeCom, str);
+		String expectedResult = "M001         Jack         Manager      $200000      ";
+		assertEquals(expectedResult, str);
 	}
+	
+    @Test
+    public void TestStaffCompareToGreater(){
+        int actual = m.compareTo(s);
+        assertEquals(-1, actual);
+    }
+
+    @Test
+    public void TestStaffCompareToEqual(){
+        int actual = m.compareTo(m);
+        assertEquals(0, actual);
+    }
+
+    @Test
+    public void TestStaffCompareToLess(){
+        int actual = s.compareTo(m);
+        assertEquals(1, actual);
+    }
+
 
 }

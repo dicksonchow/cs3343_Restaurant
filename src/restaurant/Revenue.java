@@ -23,7 +23,7 @@ public class Revenue {
 	
 	public String toString() {
 		int revenue = setRevenue();
-		return String.format("%-15s", "$" + revenue);
+		return String.format("%-15s\n", "$" + revenue);
 	}
 	
 }

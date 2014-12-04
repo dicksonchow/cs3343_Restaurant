@@ -4,7 +4,6 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import restaurant.CmdCost;
 import restaurant.Cost;
 import restaurant.Ingredient;
 import restaurant.Restaurant;
@@ -17,15 +16,11 @@ public class TestCost {
 
 	@Before
 	public void setUp(){
-		Ingredient i1 = new Ingredient("001", "fish", "10", "20");
-		Ingredient i2 = new Ingredient("002", "cheese", "100", "30");
-		Ingredient i3 = new Ingredient("003", "sugar", "20", "50");
-		Restaurant.getInstance().addIngredient(i1);
-		Restaurant.getInstance().addIngredient(i2);
-		Restaurant.getInstance().addIngredient(i3);
-		this.i1 = i1;
-		this.i2 = i2;
-		this.i3 = i3;
+		//Ingredient must exist before calculating the cost.
+		
+		i1 = new Ingredient("I001", "Fish", "10", "25");
+		i2 = new Ingredient("I002", "Cheese", "100", "30");
+		i3 = new Ingredient("I003", "Sugar", "20", "50");
 	}
 	
 	@After
@@ -36,25 +31,19 @@ public class TestCost {
 	}
 	
 	@Test
-	public void testTotalCost(){
+	public void testCostSetCost(){
 		int cost = Cost.getInstance().setCost();
-		int exp = 50 + 30 + 20;
-		assertEquals(exp, cost);
+		int expectedCost = 25 + 30 + 50;
+		assertEquals(expectedCost, cost);
 	}
 	
 	@Test
-	public void testToString(){
+	public void testCostToString(){
+		//Cost = 25 + 30 + 50 = 105
+		
+		String exp = "$105           " + "\n";
 		String str = Cost.getInstance().toString();
-		int cost = 50 + 30 + 20;
-		String exp = String.format("%-15s\n", "$" + cost);
 		assertEquals(exp, str);
-	}
-	
-	@Test
-	public void testCmdCost() throws Exception{
-		int cost = 50 + 30 + 20;
-		String exp = String.format("%-15s\n", "$" + cost);
-		assertEquals(exp, (new CmdCost()).execute());
 	}
 
 }

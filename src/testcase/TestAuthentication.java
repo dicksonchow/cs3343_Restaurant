@@ -1,8 +1,11 @@
 package testcase;
 
 import static org.junit.Assert.*;
+
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
 import restaurant.Authentication;
 import restaurant.CmdAddStaff;
 
@@ -23,6 +26,7 @@ public class TestAuthentication {
 		cmd2.execute(addStaffNormal);
 	}
 	
+	@After
 	public void tearDown() {}
 	
 	@Test

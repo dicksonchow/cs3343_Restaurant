@@ -14,34 +14,19 @@ public class TestOrder {
     private Food f1;
     private Food f2;
     private Food f3;
-    private Food f4;
-    private Food f5;
     private Order o1;
     private Order o2;
 
     @Before
     public void setUp() throws Exception {
-        Food f1 = new Food("F001", "CheeseBurger", "20");
-        Food f2 = new Food("F002", "Pizza", "30");
-        Food f3 = new Food("F003", "Sushi", "20");
-        Food f4 = new Food("F004", "Sandwich", "10");
-        Food f5 = new Food("F005", "Apple Pie", "5");
-        Restaurant.getInstance().addFood(f1);
-        Restaurant.getInstance().addFood(f2);
-        Restaurant.getInstance().addFood(f3);
-        Restaurant.getInstance().addFood(f4);
-        Restaurant.getInstance().addFood(f5);
-        String[] order1 = {"F003"};
-        String[] order2 = {"F001", "F003", "F004", "F005"};
-        Order o1 = new Order("T001", order1);
-        Order o2 = new Order("T002", order2);Restaurant.getInstance().addOrder(o1);
-        this.o1 = o1;
-        this.o2 = o2;
-        this.f1 = f1;
-        this.f2 = f2;
-        this.f3 = f3;
-        this.f4 = f4;
-        this.f5 = f5;
+        f1 = new Food("F001", "CheeseBurger", "20");
+        f2 = new Food("F002", "Pizza", "30");
+        f3 = new Food("F003", "Sushi", "15");
+        
+        String[] order1 = {"F002"};
+        o1 = new Order("T001", order1);
+        String[] order2 = {"F001", "F002", "F003"};
+        o2 = new Order("T002", order2);
     }
 
     @After
@@ -49,86 +34,84 @@ public class TestOrder {
         Restaurant.getInstance().removeFood(f1);
         Restaurant.getInstance().removeFood(f2);
         Restaurant.getInstance().removeFood(f3);
-        Restaurant.getInstance().removeFood(f4);
-        Restaurant.getInstance().removeFood(f5);
         Restaurant.getInstance().removeOrder(o1);
         Restaurant.getInstance().removeOrder(o2);
     }
 
     @Test
-    public void TestSetOrder1(){
+    public void TestOrderSetOrder1(){
         String s = o1.setOrder();
-        assertEquals("Sushi", s);
+        assertEquals("Pizza", s);
     }
 
     @Test
-    public void TestSetOrder2(){
+    public void TestOrderSetOrder2(){
         String s = o2.setOrder();
-        assertEquals("CheeseBurger, Sushi, Sandwich, Apple Pie", s);
+        assertEquals("CheeseBurger, Pizza, Sushi", s);
     }
 
     @Test
-    public void TestTotalAmount_1(){
+    public void TestOrderSetTotalAmount1(){
         int actual = o1.setTotalAmount();
-        int expected = 20;
-        assertEquals(expected, actual);
+        assertEquals(30, actual);
     }
 
     @Test
-    public void TestTotalAmount_2(){
+    public void TestOrderSetTotalAmount2(){
+    	//Total = 20 + 30 + 15
+    	
         int actual = o2.setTotalAmount();
-        int expected = 20 + 20 + 10 + 5;
-        assertEquals(expected, actual);
+        assertEquals(65, actual);
     }
 
     @Test
-    public void TestGetTableId_1(){
+    public void TestOrderGetTableId1(){
         String s = o1.getTableID();
         assertEquals("T001", s);
     }
 
     @Test
-    public void TestGetTableId_2(){
+    public void TestOrderGetTableId2(){
         String s = o2.getTableID();
         assertEquals("T002", s);
     }
 
     @Test
-    public void TestCompareToGreater(){
+    public void TestOrderCompareToGreater(){
         int actual = o1.compareTo(o2);
         assertEquals(-1, actual);
     }
 
     @Test
-    public void TestCompareToEqual(){
+    public void TestOrderCompareToEqual(){
         int actual = o1.compareTo(o1);
         assertEquals(0, actual);
     }
 
     @Test
-    public void TestCompareToLess(){
+    public void TestOrderCompareToLess(){
         int actual = o2.compareTo(o1);
         assertEquals(1, actual);
     }
 
     @Test
-    public void TestToString_1(){
+    public void TestOrderToString1(){
         String actual = o1.toString();
-        String expected = String.format("%-13s%-13s%-40s", "T001", "$20", "Sushi");
+        String expected = "T001         $30          Pizza                                   ";
         assertEquals(expected, actual);
     }
 
     @Test
-    public void TestToString_2(){
+    public void TestOrderToString2(){
         String actual = o2.toString();
-        String expected = String.format("%-13s%-13s%-40s", "T002", "$55", "CheeseBurger, Sushi, Sandwich, Apple Pie");
+        String expected = "T002         $65          CheeseBurger, Pizza, Sushi              ";
         assertEquals(expected, actual);
     }
 
     @Test
-    public void TestGetListHeader(){
+    public void TestOrderGetListHeader(){
         String actual = Order.getListingHeader();
-        String expected = String.format("%-13s%-13s%-40s", "Table_ID", "Total", "Order");
+        String expected = "Table_ID     Total        Order                                   ";
         assertEquals(expected, actual);
     }
 }

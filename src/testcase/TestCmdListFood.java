@@ -2,11 +2,11 @@ package testcase;
 
 import static org.junit.Assert.*;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import restaurant.CmdAddFood;
 import restaurant.CmdListFood;
+import restaurant.Food;
 
 public class TestCmdListFood {
 
@@ -14,15 +14,11 @@ public class TestCmdListFood {
 	public void setUp() throws Exception {
 		//Food must exist before listing food.
 		
-		String[] addFood1 = {"addFood", "F001", "CheeseBurger", "20"};
-		CmdAddFood cmd1 = new CmdAddFood();
-		cmd1.execute(addFood1);
-		
-		String[] addFood2 = {"addFood", "F002", "Hamburger", "30"};
-		CmdAddFood cmd2 = new CmdAddFood();
-		cmd2.execute(addFood2);
+		new Food("F001", "CheeseBurger", "20");
+		new Food("F002", "Hamburger", "30");
 	}
 	
+	@After
 	public void tearDown() {}
 
 	//CmdListFood format: "listFood"

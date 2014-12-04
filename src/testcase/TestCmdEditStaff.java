@@ -1,10 +1,12 @@
 package testcase;
 
 import static org.junit.Assert.*;
+
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import restaurant.CmdAddStaff;
 import restaurant.CmdEditStaff;
+import restaurant.Staff;
 
 public class TestCmdEditStaff {
 
@@ -12,11 +14,10 @@ public class TestCmdEditStaff {
 	public void setUp() throws Exception {
 		//Staff must exist before editing Staff.
 		
-		String[] addStaff = {"addStaff", "M001", "Jack", "Manager", "15000", "123"};
-		CmdAddStaff cmd = new CmdAddStaff();
-		cmd.execute(addStaff);
+		new Staff("M001", "Jack", "Manager", "15000", "123");
 	}
 	
+	@After
 	public void tearDown() {}
 
 	/*CmdEditStaff format: "editStaff", Staff_ID, Staff_Name, Staff_Position, Staff_Salary, Staff_Password

@@ -1,6 +1,8 @@
 package testcase;
 
 import static org.junit.Assert.assertEquals;
+
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -15,8 +17,11 @@ public class TestCmdAddOrder {
 		
 		new Food("F001", "CheeseBurger", "20");
 		new Food("F002", "Pizza", "30");
-		new Food("F003", "Sushi", "20");
+		new Food("F003", "Sushi", "10");
 	}
+	
+	@After
+	public void tearDown() {}
 	
 	/*CmdAddOrder format: "addOrder", Order_ID, Food_ID...(unrestricted number of Food_IDs)
 	 *Order_ID is selected by user. Food_ID is inputed by user.

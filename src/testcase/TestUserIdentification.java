@@ -3,7 +3,8 @@ package testcase;
 import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
-import restaurant.CmdAddStaff;
+import restaurant.Manager;
+import restaurant.Staff;
 import restaurant.UserIdentification;
 
 public class TestUserIdentification {
@@ -14,14 +15,9 @@ public class TestUserIdentification {
 		 *CmdAddStaff format: "addStaff", Staff_ID, Name, Position, Salary, Password
 		 *After the user successfully logins, UserIdentification will be implemented.
 		 */
-		
-		String[] addStaffManager = {"addStaff", "M001", "Jack", "Manager", "15000", "123"};
-		CmdAddStaff cmd1 = new CmdAddStaff();
-		cmd1.execute(addStaffManager);
-		
-		String[] addStaffNormal = {"addStaff", "S001", "Rose", "Staff", "9000", "123"};
-		CmdAddStaff cmd2 = new CmdAddStaff();
-		cmd2.execute(addStaffNormal);
+
+		new Manager("M001", "Jack", "Manager", "15000", "123");
+		new Staff("S001", "Rose", "Staff", "9000", "123");
 	}
 	
 	public void tearDown() {}

@@ -1,10 +1,12 @@
 package testcase;
 
 import static org.junit.Assert.*;
+
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import restaurant.CmdAddIngredient;
 import restaurant.CmdListIngredient;
+import restaurant.Ingredient;
 
 public class TestCmdListIngredient {
 
@@ -12,15 +14,11 @@ public class TestCmdListIngredient {
 	public void setUp() throws Exception {
 		//Ingredient must exist before listing ingredient.
 		
-		String[] addIngre1 = {"addIng", "I001", "Sugar", "10", "20"};
-		CmdAddIngredient cmd1 = new CmdAddIngredient();
-		cmd1.execute(addIngre1);
-		
-		String[] addIngre2 = {"addIng", "I002", "Fish", "10", "30"};
-		CmdAddIngredient cmd2 = new CmdAddIngredient();
-		cmd2.execute(addIngre2);
+		new Ingredient("I001", "Sugar", "10", "20");
+		new Ingredient("I002", "Fish", "10", "30");
 	}
 	
+	@After
 	public void tearDown() {}
 
 	//CmdListIngredient format: "listIng"

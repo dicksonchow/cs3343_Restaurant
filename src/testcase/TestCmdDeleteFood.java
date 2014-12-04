@@ -1,10 +1,11 @@
 package testcase;
 
 import static org.junit.Assert.*;
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import restaurant.CmdAddFood;
 import restaurant.CmdDeleteFood;
+import restaurant.Food;
 
 public class TestCmdDeleteFood {
 
@@ -12,11 +13,10 @@ public class TestCmdDeleteFood {
 	public void setUp() throws Exception {
 		//Food must exist before deleting food.
 		
-		String[] addFood = {"addFood", "F001", "CheeseBurger", "20"};
-		CmdAddFood cmd = new CmdAddFood();
-		cmd.execute(addFood);
+		new Food("F001", "CheeseBurger", "20");
 	}
 	
+	@After
 	public void tearDown() {}
 
 	/*CmdDeleteFood format: "deleteFood", Food_ID

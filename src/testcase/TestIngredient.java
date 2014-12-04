@@ -2,9 +2,9 @@ package testcase;
 
 import static org.junit.Assert.*;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import restaurant.Ingredient;
 
 public class TestIngredient {
@@ -13,55 +13,58 @@ public class TestIngredient {
 
 	@Before
 	public void setUp(){
-		Ingredient i1 = new Ingredient("001", "fish", "10", "20");
-		this.i1 = i1;
+		i1 = new Ingredient("I001", "Fish", "10", "20");
 	}
 	
-	@Test
-	public void testGetId(){
-		String id = i1.getIngredientID();
-		assertEquals("001", id);
-	}
+	@After
+	public void teardown(){}
 	
 	@Test
-	public void testGetPrice(){
+	public void testIngreGetIngredientPrice(){
 		int price = i1.getIngredientPrice();
 		assertEquals(20, price);
+	}	
+	
+	@Test
+	public void testIngreGetIngredientId(){
+		String id = i1.getIngredientID();
+		assertEquals("I001", id);
+	}
+		
+	@Test
+	public void testIngreCompareToGreater(){
+		Ingredient i2 = new Ingredient("I002", "Cheese", "100", "30");
+		int result = i1.compareTo(i2);
+		assertEquals(-1,result);
 	}
 	
 	@Test
-	public void testToString(){
+	public void testIngreCompareToEqual(){
+		Ingredient i2 = new Ingredient("I002", "Cheese", "100", "30");
+		int result = i2.compareTo(i2);
+		assertEquals(0, result);
+	}
+	
+	@Test
+	public void testIngreCompareToSmaller(){
+		Ingredient i2 = new Ingredient("I002", "Cheese", "100", "30");
+		int result = i2.compareTo(i1);
+		assertEquals(1, result);
+	}
+	
+	@Test
+	public void testIngreToString(){
 		String toString = i1.toString();
-		String toBeTest = String.format("%-15s%-18s%-13s%-13s", "001", "fish", "10", "$" + "20");
-		assertEquals(toBeTest, toString);
+		String exp = "I001           Fish              10           $20          ";
+		assertEquals(exp, toString);
 	}
 	
 	@SuppressWarnings("static-access")
 	@Test
 	public void testListingHeading(){
 		String toString = i1.getListingHeader();
-		String toBeTest = String.format("%-15s%-18s%-13s%-13s", "Ingredient_ID", "Ingredient_Name", "Quantity", "Price");
-		assertEquals(toBeTest, toString);
+		String exp = "Ingredient_ID  Ingredient_Name   Quantity     Price        ";
+		assertEquals(exp, toString);
 	}
-	
-	@Test
-	public void testCompareToGreater(){
-		Ingredient i2 = new Ingredient("002", "cheese", "100", "30");
-		int result = i1.compareTo(i2);
-		assertEquals(result, -1);
-	}
-	
-	@Test
-	public void testCompareToEqual(){
-		Ingredient i2 = new Ingredient("002", "cheese", "100", "30");
-		int result = i2.compareTo(i2);
-		assertEquals(result, 0);
-	}
-	
-	@Test
-	public void testCompareToLess(){
-		Ingredient i2 = new Ingredient("002", "cheese", "100", "30");
-		int result = i2.compareTo(i1);
-		assertEquals(result, 1);
-	}
+
 }

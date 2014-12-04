@@ -2,6 +2,7 @@ package testcase;
 
 import static org.junit.Assert.assertEquals;
 
+import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -11,6 +12,7 @@ public class TestCmdAddStaff {
 	@Before
 	public void setUp() throws Exception {}
 	
+	@After
 	public void tearDown() {}
 	
 	/*CmdAddStaff format: "addStaff", Staff_ID, Staff_Name, Staff_Position, Staff_Salary, Staff_Password
