@@ -1,6 +1,6 @@
 package restaurant;
 
-public class CmdRTable {
+public class CmdRTable implements ActionCmd{
 	
 	ReservedTable t;
 	

@@ -1,6 +1,6 @@
 package restaurant;
 
-public class CmdEditStaff {
+public class CmdEditStaff implements ActionCmd{
 
 	Staff s;
 	
