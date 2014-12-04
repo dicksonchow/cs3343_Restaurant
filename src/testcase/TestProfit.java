@@ -3,6 +3,7 @@ package testcase;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
 import restaurant.*;
 import static org.junit.Assert.assertEquals;
 
@@ -22,15 +23,23 @@ public class TestProfit {
         i1 = new Ingredient("I001", "Fish", "10", "20");
         i2 = new Ingredient("I002", "Cheese", "100", "30");
         i3 = new Ingredient("I003", "Sugar", "20", "10");
+		Restaurant.getInstance().addIngredient(i1);
+		Restaurant.getInstance().addIngredient(i2);
+		Restaurant.getInstance().addIngredient(i3);		
 
         f1 = new Food("F001", "CheeseBurger", "20");
         f2 = new Food("F002", "Pizza", "30");
         f3 = new Food("F003", "Sushi", "15");
+		Restaurant.getInstance().addFood(f1);
+		Restaurant.getInstance().addFood(f2);
+		Restaurant.getInstance().addFood(f3);
 
         String[] order1 = {"F001", "F002", "F003"};
         o1 = new Order("T001", order1);
         String[] order2 = {"F001", "F003"};
-        o2 = new Order("T002", order2);        
+        o2 = new Order("T002", order2);  
+		Restaurant.getInstance().addOrder(o1);
+		Restaurant.getInstance().addOrder(o2);
     }
 
     @After

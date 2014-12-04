@@ -6,7 +6,7 @@ public class ReservedTable implements Comparable<ReservedTable> {
 	
 	public ReservedTable(String tid) {
 		this.tid=tid;
-		Restaurant.getInstance().addRTable(this);
+//		Restaurant.getInstance().addRTable(this);
 	}
 	
 	public String getRTableID() {

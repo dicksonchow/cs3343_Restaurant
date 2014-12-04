@@ -5,8 +5,10 @@ import static org.junit.Assert.assertEquals;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
 import restaurant.CmdAddStaff;
 import restaurant.Manager;
+import restaurant.Restaurant;
 import restaurant.Staff;
 
 public class TestCmdAddStaff {
@@ -14,8 +16,10 @@ public class TestCmdAddStaff {
 	public void setUp() throws Exception {
 		//Staffs M001 and S001 have been added.
 		
-		new Manager ("M001", "Kate", "Manager", "15000", "123");		
-		new Staff ("S001", "Rome", "Staff", "8000", "123");	
+		Manager m = new Manager ("M001", "Kate", "Manager", "15000", "123");		
+		Staff s = new Staff ("S001", "Rome", "Staff", "8000", "123");	
+		Restaurant.getInstance().addStaff(m);
+		Restaurant.getInstance().addStaff(s);
 	}
 	
 	@After

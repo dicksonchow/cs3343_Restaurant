@@ -5,9 +5,11 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
 import restaurant.CmdDeleteOrder;
 import restaurant.Food;
 import restaurant.Order;
+import restaurant.Restaurant;
 
 public class TestCmdDeleteOrder {
 
@@ -15,10 +17,12 @@ public class TestCmdDeleteOrder {
 	public void setUp() throws Exception {
 		//Order must exist before deleting order.
 		
-		new Food("F001", "CheeseBurger", "20");
+		Food f = new Food("F001", "CheeseBurger", "20");
+		Restaurant.getInstance().addFood(f);
 		
 		String[] addOrder = {"F001"};
-		new Order("T001", addOrder);
+		Order o = new Order("T001", addOrder);
+		Restaurant.getInstance().addOrder(o);
 	}
 	
 	@After

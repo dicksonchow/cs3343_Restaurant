@@ -5,8 +5,10 @@ import static org.junit.Assert.assertEquals;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
 import restaurant.CmdDeleteIngredient;
 import restaurant.Ingredient;
+import restaurant.Restaurant;
 
 public class TestCmdDeleteIngredient {
 
@@ -14,7 +16,8 @@ public class TestCmdDeleteIngredient {
 	public void setUp() throws Exception {
 		//Ingredient must exist before deleting ingredient.
 		
-		new Ingredient("I001", "Sugar", "10", "20");
+		Ingredient i = new Ingredient("I001", "Sugar", "10", "20");
+		Restaurant.getInstance().addIngredient(i);
 	}
 	
 	@After

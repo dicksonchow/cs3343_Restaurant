@@ -1,35 +1,22 @@
 package testcase;
 
 import static org.junit.Assert.*;
-
-import java.util.ArrayList;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import restaurant.Food;
-import restaurant.Ingredient;
-import restaurant.Order;
-import restaurant.ReservedTable;
 import restaurant.Restaurant;
-import restaurant.Staff;
 
 public class TestRestaurant {
 
 	private Restaurant r = Restaurant.getInstance();
-//	private ArrayList<Food> allFood = new ArrayList<Food>();
-//	private ArrayList<Staff> allStaffs;
-//	private ArrayList<Order> allOrders;
-//	private ArrayList<ReservedTable> allRTables;
-//	private ArrayList<Ingredient> allIngredients;
 	
 	@Before
 	public void setUp() throws Exception {	
-		new Food("F001", "CheeseBurger", "20");
-		new Food("F002", "Hamburger", "30");
-
-		
-
+		Food f1 = new Food("F001", "CheeseBurger", "20");
+		Food f2 = new Food("F002", "Hamburger", "30");
+		Restaurant.getInstance().addFood(f1);
+		Restaurant.getInstance().addFood(f2);
 	}
 	
 	@After

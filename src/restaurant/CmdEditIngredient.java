@@ -15,6 +15,7 @@ public class CmdEditIngredient {
 				else {
 					r.removeIngredient(ingredient);
 					i=new Ingredient(cmdParts[1], cmdParts[2], cmdParts[3], cmdParts[4]);
+					r.addIngredient(i);
 					return "Ingredient is edited.";
 				}
 			}

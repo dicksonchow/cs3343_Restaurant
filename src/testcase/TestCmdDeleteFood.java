@@ -1,11 +1,14 @@
 package testcase;
 
 import static org.junit.Assert.*;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
 import restaurant.CmdDeleteFood;
 import restaurant.Food;
+import restaurant.Restaurant;
 
 public class TestCmdDeleteFood {
 
@@ -13,7 +16,8 @@ public class TestCmdDeleteFood {
 	public void setUp() throws Exception {
 		//Food must exist before deleting food.
 		
-		new Food("F001", "CheeseBurger", "20");
+		Food f = new Food("F001", "CheeseBurger", "20");
+		Restaurant.getInstance().addFood(f);
 	}
 	
 	@After

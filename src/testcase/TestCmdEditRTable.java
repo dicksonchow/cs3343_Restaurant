@@ -5,8 +5,10 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
 import restaurant.CmdEditRTable;
 import restaurant.ReservedTable;
+import restaurant.Restaurant;
 
 public class TestCmdEditRTable {
 
@@ -14,9 +16,12 @@ public class TestCmdEditRTable {
 	public void setUp() throws Exception {
 		//Table must be reserved before editing reserved table.
 		
-		new ReservedTable("T001");
-		new ReservedTable("T002");
-		new ReservedTable("T003");
+		ReservedTable t1 = new ReservedTable("T001");
+		ReservedTable t2 = new ReservedTable("T002");
+		ReservedTable t3 = new ReservedTable("T003");
+		Restaurant.getInstance().addRTable(t1);
+		Restaurant.getInstance().addRTable(t2);
+		Restaurant.getInstance().addRTable(t3);
 	}
 	
 	@After

@@ -10,7 +10,7 @@ public class Food implements Comparable<Food> {
 		this.fid=fid;
 		this.fname=fname;
 		this.fprice=fprice;
-		Restaurant.getInstance().addFood(this);
+//		Restaurant.getInstance().addFood(this);
 	}
 
 	public int getFoodPrice() {

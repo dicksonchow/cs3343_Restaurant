@@ -14,7 +14,7 @@ public class Staff implements Comparable<Staff> {
 		this.position=position;
 		this.salary=Integer.parseInt(salary);
 		this.password=password;
-		Restaurant.getInstance().addStaff(this);
+//		Restaurant.getInstance().addStaff(this);
 	}
 
 	public String getStaffName() {

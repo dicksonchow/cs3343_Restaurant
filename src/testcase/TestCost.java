@@ -21,6 +21,9 @@ public class TestCost {
 		i1 = new Ingredient("I001", "Fish", "10", "25");
 		i2 = new Ingredient("I002", "Cheese", "100", "30");
 		i3 = new Ingredient("I003", "Sugar", "20", "50");
+		Restaurant.getInstance().addIngredient(i1);
+		Restaurant.getInstance().addIngredient(i2);
+		Restaurant.getInstance().addIngredient(i3);
 	}
 	
 	@After

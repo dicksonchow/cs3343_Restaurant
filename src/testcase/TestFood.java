@@ -5,7 +5,9 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
 import restaurant.Food;
+import restaurant.Restaurant;
 
 public class TestFood {
 
@@ -14,6 +16,7 @@ public class TestFood {
 	@Before
 	public void setUp(){
 		f1 = new Food("F001", "CheeseBurger", "20");
+		Restaurant.getInstance().addFood(f1);
 	}
 	
 	@After

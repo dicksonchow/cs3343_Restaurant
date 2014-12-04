@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import restaurant.CmdRTable;
 import restaurant.ReservedTable;
+import restaurant.Restaurant;
 
 public class TestCmdRTable {
 
@@ -15,7 +16,8 @@ public class TestCmdRTable {
 	public void setUp() throws Exception {
 		//Table T001 has been reserved.
 		
-		new ReservedTable("T001");
+		ReservedTable t = new ReservedTable("T001");
+		Restaurant.getInstance().addRTable(t);
 	}
 	
 	@After

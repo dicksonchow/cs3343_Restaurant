@@ -5,8 +5,10 @@ import static org.junit.Assert.assertEquals;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
 import restaurant.CmdAddIngredient;
 import restaurant.Ingredient;
+import restaurant.Restaurant;
 
 public class TestCmdAddIngredient {
 
@@ -14,7 +16,8 @@ public class TestCmdAddIngredient {
 	public void setUp() throws Exception {
 		//Ingredient I001 has been added.
 		
-		new Ingredient ("I001", "Salt", "10", "30");
+		Ingredient i = new Ingredient ("I001", "Salt", "10", "30");
+		Restaurant.getInstance().addIngredient(i);
 	}
 	
 	@After

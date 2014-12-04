@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import restaurant.CmdAddFood;
 import restaurant.Food;
+import restaurant.Restaurant;
 
 public class TestCmdAddFood {
 
@@ -15,7 +16,8 @@ public class TestCmdAddFood {
 	public void setUp() throws Exception {
 		//Food F001 has been added.
 		
-		new Food ("F001", "Hamburger", "30");
+		Food f = new Food ("F001", "Hamburger", "30");
+		Restaurant.getInstance().addFood(f);
 	}
 	
 	@After

@@ -33,6 +33,7 @@ public class CmdEditOrder implements ActionCmd, FoodIdValidation{
 				else{
 					r.removeOrder(order);
 					o = new Order (tableId, foodId);
+					r.addOrder(o);
 					return "Order is edited.";
 				}	
 			}

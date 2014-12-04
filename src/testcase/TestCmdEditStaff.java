@@ -5,8 +5,10 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
 import restaurant.CmdEditStaff;
 import restaurant.Manager;
+import restaurant.Restaurant;
 
 public class TestCmdEditStaff {
 
@@ -14,7 +16,8 @@ public class TestCmdEditStaff {
 	public void setUp() throws Exception {
 		//Staff must exist before editing Staff.
 		
-		new Manager("M001", "Jack", "Manager", "15000", "123");
+		Manager m = new Manager("M001", "Jack", "Manager", "15000", "123");
+		Restaurant.getInstance().addStaff(m);
 	}
 	
 	@After

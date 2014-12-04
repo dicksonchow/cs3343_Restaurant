@@ -7,6 +7,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 import restaurant.ReservedTable;
+import restaurant.Restaurant;
 
 public class TestReservedTable {
 
@@ -15,6 +16,7 @@ public class TestReservedTable {
 	@Before
 	public void setUp(){
 		t1 = new ReservedTable("T001");
+		Restaurant.getInstance().addRTable(t1);
 	}
 	
 	@After

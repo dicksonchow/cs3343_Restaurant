@@ -15,14 +15,18 @@ public class TestCmdAddOrder {
 	public void setUp() throws Exception {
 		//Food must exist before adding order.
 		
-		new Food("F001", "CheeseBurger", "20");
-		new Food("F002", "Pizza", "30");
-		new Food("F003", "Sushi", "10");
+		Food f1 = new Food("F001", "CheeseBurger", "20");
+		Food f2 = new Food("F002", "Pizza", "30");
+		Food f3 = new Food("F003", "Sushi", "10");
+		Restaurant.getInstance().addFood(f1);
+		Restaurant.getInstance().addFood(f2);
+		Restaurant.getInstance().addFood(f3);
 		
 		//Order T001 has been added.
 		
 		String[] str = {"F003"};
-		new Order ("T001", str);
+		Order o = new Order ("T001", str);
+		Restaurant.getInstance().addOrder(o);
 	}
 	
 	@After

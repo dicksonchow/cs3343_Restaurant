@@ -19,6 +19,7 @@ public class CmdEditStaff {
 					else {			
 						r.removeStaff(staff);
 						s=new Staff (cmdParts[1], cmdParts[2], cmdParts[3], cmdParts[4], cmdParts[5]);
+						r.addStaff(s);
 						return "Staff is edited.";
 					}
 				}		

@@ -5,8 +5,10 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
 import restaurant.CmdListIngredient;
 import restaurant.Ingredient;
+import restaurant.Restaurant;
 
 public class TestCmdListIngredient {
 
@@ -14,8 +16,10 @@ public class TestCmdListIngredient {
 	public void setUp() throws Exception {
 		//Ingredient must exist before listing ingredient.
 		
-		new Ingredient("I001", "Sugar", "10", "20");
-		new Ingredient("I002", "Fish", "10", "30");
+		Ingredient i1 = new Ingredient("I001", "Sugar", "10", "20");
+		Ingredient i2 = new Ingredient("I002", "Fish", "10", "30");
+		Restaurant.getInstance().addIngredient(i1);
+		Restaurant.getInstance().addIngredient(i2);
 	}
 	
 	@After

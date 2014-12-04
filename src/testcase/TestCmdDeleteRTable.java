@@ -5,8 +5,10 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
 import restaurant.CmdDeleteRTable;
 import restaurant.ReservedTable;
+import restaurant.Restaurant;
 
 public class TestCmdDeleteRTable {
 
@@ -14,7 +16,8 @@ public class TestCmdDeleteRTable {
 	public void setUp() throws Exception {
 		//Table must be reserved before deleting reserved table.
 		
-		new ReservedTable("T001");
+		ReservedTable t = new ReservedTable("T001");
+		Restaurant.getInstance().addRTable(t);
 	}
 	
 	@After

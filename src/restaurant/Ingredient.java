@@ -12,7 +12,7 @@ public class Ingredient implements Comparable<Ingredient> {
 		this.iname=iname;
 		this.iquantity=iquantity;
 		this.iprice=iprice;
-		Restaurant.getInstance().addIngredient(this);
+//		Restaurant.getInstance().addIngredient(this);
 	}
 
 	public int getIngredientPrice() {

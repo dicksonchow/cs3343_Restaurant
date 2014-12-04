@@ -9,6 +9,7 @@ public class CmdRTable {
 			ReservedTable rTable = r.findRTable(cmdParts[1]);
 			if(rTable==null){
 				t=new ReservedTable (cmdParts[1]);    
+				r.addRTable(t);
 				return "Table is reserved.";
 			}
 			else{

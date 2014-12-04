@@ -5,9 +5,11 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
 import restaurant.CmdListOrder;
 import restaurant.Food;
 import restaurant.Order;
+import restaurant.Restaurant;
 
 public class TestCmdListOrder {
 
@@ -15,14 +17,19 @@ public class TestCmdListOrder {
 	public void setUp() throws Exception {
 		//Order must exist before listing order.
 		
-		new Food("F001", "CheeseBurger", "20");
-		new Food("F002", "Pizza", "30");
-		new Food("F003", "Sushi", "5");
+		Food f1 = new Food("F001", "CheeseBurger", "20");
+		Food f2 = new Food("F002", "Pizza", "30");
+		Food f3 = new Food("F003", "Sushi", "5");
+		Restaurant.getInstance().addFood(f1);
+		Restaurant.getInstance().addFood(f2);
+		Restaurant.getInstance().addFood(f3);
 
 		String[] addOrder1 = {"F001", "F002", "F003"};
-		new Order("T001", addOrder1);
+		Order o1 = new Order("T001", addOrder1);
 		String[] addOrder2 = {"F002", "F003"};
-		new Order("T002", addOrder2);
+		Order o2 = new Order("T002", addOrder2);
+		Restaurant.getInstance().addOrder(o1);
+		Restaurant.getInstance().addOrder(o2);
 	}
 	
 	@After

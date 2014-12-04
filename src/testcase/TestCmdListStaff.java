@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import restaurant.CmdListStaff;
 import restaurant.Manager;
+import restaurant.Restaurant;
 import restaurant.Staff;
 
 public class TestCmdListStaff {
@@ -16,8 +17,10 @@ public class TestCmdListStaff {
 	public void setUp() throws Exception {
 		//Staff must exist before listing Staff.
 
-		new Manager("M001", "Jack", "Manager", "15000", "123");
-		new Staff("S001", "Mary", "Staff", "8000", "123");
+		Manager m = new Manager("M001", "Jack", "Manager", "15000", "123");
+		Staff s = new Staff("S001", "Mary", "Staff", "8000", "123");
+		Restaurant.getInstance().addStaff(m);
+		Restaurant.getInstance().addStaff(s);
 	}
 	
 	@After
