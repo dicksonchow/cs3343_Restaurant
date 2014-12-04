@@ -11,7 +11,7 @@ public class Order implements Comparable<Order> {
 	public Order(String tableId, String[] foodId) {
 		this.tableId=tableId;
 		this.foodId=foodId;
-		//restaurant.addOrder(this);
+		restaurant.addOrder(this);
 	}
 
 	public String setOrder() throws NullPointerException {

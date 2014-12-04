@@ -45,9 +45,9 @@ public class ExecuteFileCmd {
         if (cmdParts[0].equals("addIng"))
             (new CmdAddIngredient()).execute(cmdParts);
         if (cmdParts[0].equals("listIng"))
-            (new CmdListIng()).execute();
+            (new CmdListIngredient()).execute();
         if (cmdParts[0].equals("editIng"))
-            (new CmdEditIngIngredient()).execute(cmdParts);
+            (new CmdEditIngredient()).execute(cmdParts);
         if (cmdParts[0].equals("deleteIng"))
             (new CmdDeleteIngredient()).execute(cmdParts);
         

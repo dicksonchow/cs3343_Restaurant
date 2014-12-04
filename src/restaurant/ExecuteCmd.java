@@ -42,9 +42,9 @@ public class ExecuteCmd {
         if (cmdParts[0].equals("addIng"))
             return (new CmdAddIngredient()).execute(cmdParts);
         if (cmdParts[0].equals("listIng"))
-            return (new CmdListIng()).execute();
+            return (new CmdListIngredient()).execute();
         if (cmdParts[0].equals("editIng"))
-            return (new CmdEditIngIngredient()).execute(cmdParts);
+            return (new CmdEditIngredient()).execute(cmdParts);
         if (cmdParts[0].equals("deleteIng"))
             return (new CmdDeleteIngredient()).execute(cmdParts);
            

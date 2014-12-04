@@ -1,12 +1,12 @@
 package restaurant;
 
-public class CmdEditStaff implements ActionCmd{
+public class CmdEditStaff {
 
 	Staff s;
 	
 	public String execute(String[] cmdParts) throws NumberFormatException {
 		try {
-			if(cmdParts.length==6 && !cmdParts[2].trim().equals("") && Integer.parseInt(cmdParts[4])>=0 && !cmdParts[5].trim().equals("")) {
+			if(!cmdParts[2].trim().equals("") && Integer.parseInt(cmdParts[4])>=0 && !cmdParts[5].trim().equals("")) {
 				Restaurant r = Restaurant.getInstance();
 				Staff staff = r.findStaff(cmdParts[1]); 
 				if(staff==null){ 

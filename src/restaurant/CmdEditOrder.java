@@ -1,6 +1,6 @@
 package restaurant;
 
-public class CmdEditOrder implements ActionCmd, FoodIdValidate{
+public class CmdEditOrder implements ActionCmd, FoodIdValidation{
 
 	Order o;
 	
@@ -33,7 +33,6 @@ public class CmdEditOrder implements ActionCmd, FoodIdValidate{
 				else{
 					r.removeOrder(order);
 					o = new Order (tableId, foodId);
-					Restaurant.getInstance().addOrder(o);
 					return "Order is edited.";
 				}	
 			}

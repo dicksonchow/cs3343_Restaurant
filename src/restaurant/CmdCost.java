@@ -1,6 +1,6 @@
 package restaurant;
 
-public class CmdCost implements ListingAndCalCmd{
+public class CmdCost {
 
 	public String execute() {
 		return Cost.getInstance().toString();

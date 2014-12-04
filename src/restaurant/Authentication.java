@@ -2,21 +2,15 @@ package restaurant;
 
 public class Authentication {
 
-	//private String inputStaffId;
-	//private String inputStaffPw;
 	private static Authentication instance = new Authentication();
 	private Restaurant restaurant = Restaurant.getInstance();
 	private Staff staff;
-	
-	/*public Authentication(String inputStaffId, String inputStaffPw) {
-		this.inputStaffId=inputStaffId;
-		this.inputStaffPw=inputStaffPw;
-	}*/
-	
+		
 	public static Authentication getInstance() {
 		return instance;
 	}
 	
+	//This method is to validate user's staff ID and password.
 	public String validation(String inputStaffId, String inputStaffPw) {
 			if(restaurant.findStaff(inputStaffId) != null) {
 				staff = restaurant.findStaff(inputStaffId);		

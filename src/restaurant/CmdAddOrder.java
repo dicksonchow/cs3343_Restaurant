@@ -1,6 +1,6 @@
 package restaurant;
 
-public class CmdAddOrder implements ActionCmd, FoodIdValidate{
+public class CmdAddOrder implements ActionCmd, FoodIdValidation{
 
 	Order o;
 	
@@ -28,8 +28,7 @@ public class CmdAddOrder implements ActionCmd, FoodIdValidate{
 				Order order = r.findOrder(cmdParts[1]);
 				
 				if(order==null){
-					o = new Order (tableId, foodId);    
-					Restaurant.getInstance().addOrder(o);
+					o = new Order (tableId, foodId);
 					return "Order is added.";
 				}   	
 				else{
