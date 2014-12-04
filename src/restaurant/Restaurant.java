@@ -58,6 +58,11 @@ public class Restaurant {
 		return null;
 	}
 	
+	public ArrayList<Food> getFoodArrayList() {
+		return allFood;
+	}
+
+	
 //Staff
 	public String listStaff() {
 		String listingHeader = Staff.getListingHeader() + "\n";

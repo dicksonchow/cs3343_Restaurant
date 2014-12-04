@@ -29,6 +29,7 @@ public class CmdAddOrder implements ActionCmd, FoodIdValidation{
 				
 				if(order==null){
 					o = new Order (tableId, foodId);
+					r.addOrder(o);
 					return "Order is added.";
 				}   	
 				else{

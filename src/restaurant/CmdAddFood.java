@@ -10,7 +10,8 @@ public class CmdAddFood implements ActionCmd{
 				Restaurant r = Restaurant.getInstance();
 				Food food = r.findFood(cmdParts[1]);
 				if(food==null){
-					f=new Food (cmdParts[1],cmdParts[2],cmdParts[3]);    
+					f=new Food (cmdParts[1],cmdParts[2],cmdParts[3]); 
+					r.addFood(f);
 					return "Food is added.";
 				}
 				else{

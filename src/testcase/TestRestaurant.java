@@ -17,18 +17,17 @@ import restaurant.Staff;
 public class TestRestaurant {
 
 	private Restaurant r = Restaurant.getInstance();
-	private ArrayList<Food> allFood = new ArrayList<Food>();
-	private ArrayList<Staff> allStaffs;
-	private ArrayList<Order> allOrders;
-	private ArrayList<ReservedTable> allRTables;
-	private ArrayList<Ingredient> allIngredients;
+//	private ArrayList<Food> allFood = new ArrayList<Food>();
+//	private ArrayList<Staff> allStaffs;
+//	private ArrayList<Order> allOrders;
+//	private ArrayList<ReservedTable> allRTables;
+//	private ArrayList<Ingredient> allIngredients;
 	
 	@Before
 	public void setUp() throws Exception {	
-		Food f1 = new Food("F001", "CheeseBurger", "20");
-		Food f2 = new Food("F002", "Hamburger", "30");
-		allFood.add(f1);
-		allFood.add(f2);
+		new Food("F001", "CheeseBurger", "20");
+		new Food("F002", "Hamburger", "30");
+
 		
 
 	}
@@ -52,7 +51,12 @@ public class TestRestaurant {
 	{
 		Food f3 = new Food("F003", "Fish", "40");
 		r.addFood(f3);
-		String result = r.allFood.toString();
-		assertEquals("[h]", result);
+		String result = r.getFoodArrayList().toString();
+		String toString1 = "F001         CheeseBurger   $20            " + ", ";
+		String toString2 = "F002         Hamburger      $30            " + ", ";
+		String toString3 = "F003         Fish           $40            " + ", ";
+		String listFood = "[" + toString1 + toString2 + toString3 + "]";
+		assertEquals(listFood, result);
+		
 	}
 }

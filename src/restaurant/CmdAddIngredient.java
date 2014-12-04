@@ -11,6 +11,7 @@ public class CmdAddIngredient implements ActionCmd{
 				Ingredient ingredient = r.findIngredient(cmdParts[1]);
 				if(ingredient==null){
 					i=new Ingredient (cmdParts[1],cmdParts[2],cmdParts[3],cmdParts[4]); 
+					r.addIngredient(i);
 					return "Ingredient is added.";
 				}
 				else{

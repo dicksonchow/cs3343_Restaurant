@@ -15,6 +15,7 @@ public class CmdEditFood {
 				else {
 					r.removeFood(food);
 					f=new Food (cmdParts[1], cmdParts[2], cmdParts[3]);
+					r.addFood(f);
 					return "Food is edited.";
 				}
 			}

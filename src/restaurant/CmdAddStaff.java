@@ -14,10 +14,12 @@ public class CmdAddStaff  implements ActionCmd{
 					//		throw new PositionMissMatchException();
 					if(cmdParts[3].equals("Manager")) {
 						s=new Manager (cmdParts[1],cmdParts[2],cmdParts[3], cmdParts[4], cmdParts[5]);
+						r.addStaff(s);
 						return "Staff is added.";
 					}
 					else if(cmdParts[3].equals("Staff")) {
 						s=new Staff (cmdParts[1],cmdParts[2],cmdParts[3], cmdParts[4], cmdParts[5]);
+						r.addStaff(s);
 						return "Staff is added.";
 					}
 					else {
