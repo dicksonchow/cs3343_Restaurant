@@ -5,7 +5,6 @@ public class CmdRTable {
 	ReservedTable t;
 	
 	public String execute(String[] cmdParts) {
-		if(cmdParts.length==2) {
 			Restaurant r = Restaurant.getInstance();
 			ReservedTable rTable = r.findRTable(cmdParts[1]);
 			if(rTable==null){
@@ -16,10 +15,7 @@ public class CmdRTable {
 				t=null;
 				return "Table is unavailable.";
 			}	
-		}
-		else {
-			return "Invalid input!";
-		}
+
 	}
 
 	

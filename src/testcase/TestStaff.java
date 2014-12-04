@@ -113,7 +113,7 @@ public class TestStaff {
 	}
 	
     @Test
-    public void TestStaffCompareToGreater(){
+    public void TestStaffCompareToSmaller(){
         int actual = m.compareTo(s);
         assertEquals(-1, actual);
     }
@@ -125,7 +125,7 @@ public class TestStaff {
     }
 
     @Test
-    public void TestStaffCompareToLess(){
+    public void TestStaffCompareToGreater(){
         int actual = s.compareTo(m);
         assertEquals(1, actual);
     }

@@ -5,12 +5,18 @@ import static org.junit.Assert.assertEquals;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
 import restaurant.CmdAddStaff;
+import restaurant.Manager;
+import restaurant.Staff;
 
 public class TestCmdAddStaff {
 	@Before
-	public void setUp() throws Exception {}
+	public void setUp() throws Exception {
+		//Staffs M001 and S001 have been added.
+		
+		new Manager ("M001", "Kate", "Manager", "15000", "123");		
+		new Staff ("S001", "Rome", "Staff", "8000", "123");	
+	}
 	
 	@After
 	public void tearDown() {}
@@ -20,15 +26,15 @@ public class TestCmdAddStaff {
 	 */
 
 	@Test
-	public void testAddStaffMgrCorrect() throws Exception 
+	public void testAddStaffManagerCorrect() throws Exception 
 	{
-		String[] addStaff = {"addStaff", "M001", "Jack", "Manager", "15000", "123"};
+		String[] addStaff = {"addStaff", "M002", "Jack", "Manager", "15000", "123"};
 		CmdAddStaff cmd = new CmdAddStaff();
 		assertEquals("Staff is added.", cmd.execute(addStaff));
 	}
 	
 	@Test
-	public void testAddStaffMgrDuplicateId() throws Exception 
+	public void testAddStaffManagerDuplicateId() throws Exception 
 	{
 		String[] addStaff = {"addStaff", "M001", "Tony", "Manager", "15000", "123"};
 		CmdAddStaff cmd = new CmdAddStaff();
@@ -36,15 +42,15 @@ public class TestCmdAddStaff {
 	}	
 	
 	@Test
-	public void testAddStaffNmlCorrect() throws Exception 
+	public void testAddStaffNormalCorrect() throws Exception 
 	{
-		String[] addStaff = {"addStaff", "S001", "Rose", "Staff", "9000", "123"};
+		String[] addStaff = {"addStaff", "S002", "Rose", "Staff", "9000", "123"};
 		CmdAddStaff cmd = new CmdAddStaff();
 		assertEquals("Staff is added.", cmd.execute(addStaff));
 	}
 
 	@Test
-	public void testAddStaffNmlDuplicateId() throws Exception 
+	public void testAddStaffNormalDuplicateId() throws Exception 
 	{
 		String[] addStaff = {"addStaff", "S001", "Mary", "Staff", "9000", "123"};
 		CmdAddStaff cmd = new CmdAddStaff();
@@ -54,7 +60,7 @@ public class TestCmdAddStaff {
 	@Test
 	public void testAddStaffInvalidPosition() throws Exception 
 	{
-		String[] addStaff = {"addStaff", "M002", "Arron", "asdfasdfasd", "50", "123"};
+		String[] addStaff = {"addStaff", "M003", "Arron", "asdfasdfasd", "50", "123"};
 		CmdAddStaff cmd = new CmdAddStaff();
 		assertEquals("Invalid position!", cmd.execute(addStaff));
 	}
@@ -62,7 +68,7 @@ public class TestCmdAddStaff {
 	@Test
 	public void testAddStaffInvalidSalary() throws Exception 
 	{
-		String[] addStaff = {"addStaff", "S002", "Kent", "Staff", "dfas", "123"};
+		String[] addStaff = {"addStaff", "S003", "Kent", "Staff", "dfas", "123"};
 		CmdAddStaff cmd = new CmdAddStaff();
 		assertEquals("Invalid salary!", cmd.execute(addStaff));
 	}
@@ -70,7 +76,7 @@ public class TestCmdAddStaff {
 	@Test
 	public void testAddStaffNegativeSalary() throws Exception 
 	{
-		String[] addStaff = {"addStaff", "M003", "Jason", "Manager", "-1000", "123"};
+		String[] addStaff = {"addStaff", "M004", "Jason", "Manager", "-1000", "123"};
 		CmdAddStaff cmd = new CmdAddStaff();
 		assertEquals("Invalid input!", cmd.execute(addStaff));
 	}
@@ -78,7 +84,7 @@ public class TestCmdAddStaff {
 	@Test
 	public void testAddStaffInvalidPw() throws Exception 
 	{
-		String[] addStaff = {"addStaff", "S003", "Tim", "Staff", "8000", ""};
+		String[] addStaff = {"addStaff", "S004", "Tim", "Staff", "8000", ""};
 		CmdAddStaff cmd = new CmdAddStaff();
 		assertEquals("Invalid input!", cmd.execute(addStaff));
 	}
@@ -86,7 +92,7 @@ public class TestCmdAddStaff {
 	@Test
 	public void testAddStaffInvalidName() throws Exception 
 	{
-		String[] addStaff = {"addStaff", "S004", " ", "Staff", "8000", "123"};
+		String[] addStaff = {"addStaff", "S005", " ", "Staff", "8000", "123"};
 		CmdAddStaff cmd = new CmdAddStaff();
 		assertEquals("Invalid input!", cmd.execute(addStaff));
 	}

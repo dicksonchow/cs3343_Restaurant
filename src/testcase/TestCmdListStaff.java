@@ -5,7 +5,9 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
 import restaurant.CmdListStaff;
+import restaurant.Manager;
 import restaurant.Staff;
 
 public class TestCmdListStaff {
@@ -14,7 +16,7 @@ public class TestCmdListStaff {
 	public void setUp() throws Exception {
 		//Staff must exist before listing Staff.
 
-		new Staff("M001", "Jack", "Manager", "15000", "123");
+		new Manager("M001", "Jack", "Manager", "15000", "123");
 		new Staff("S001", "Mary", "Staff", "8000", "123");
 	}
 	

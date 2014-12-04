@@ -77,7 +77,7 @@ public class TestOrder {
     }
 
     @Test
-    public void TestOrderCompareToGreater(){
+    public void TestOrderCompareToSmaller(){
         int actual = o1.compareTo(o2);
         assertEquals(-1, actual);
     }
@@ -89,7 +89,7 @@ public class TestOrder {
     }
 
     @Test
-    public void TestOrderCompareToLess(){
+    public void TestOrderCompareToGreater(){
         int actual = o2.compareTo(o1);
         assertEquals(1, actual);
     }

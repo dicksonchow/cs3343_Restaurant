@@ -6,7 +6,7 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 import restaurant.CmdEditStaff;
-import restaurant.Staff;
+import restaurant.Manager;
 
 public class TestCmdEditStaff {
 
@@ -14,7 +14,7 @@ public class TestCmdEditStaff {
 	public void setUp() throws Exception {
 		//Staff must exist before editing Staff.
 		
-		new Staff("M001", "Jack", "Manager", "15000", "123");
+		new Manager("M001", "Jack", "Manager", "15000", "123");
 	}
 	
 	@After

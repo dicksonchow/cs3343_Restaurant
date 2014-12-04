@@ -32,7 +32,7 @@ public class TestIngredient {
 	}
 		
 	@Test
-	public void testIngreCompareToGreater(){
+	public void testIngreCompareToSmaller(){
 		Ingredient i2 = new Ingredient("I002", "Cheese", "100", "30");
 		int result = i1.compareTo(i2);
 		assertEquals(-1,result);
@@ -46,7 +46,7 @@ public class TestIngredient {
 	}
 	
 	@Test
-	public void testIngreCompareToSmaller(){
+	public void testIngreCompareToGreater(){
 		Ingredient i2 = new Ingredient("I002", "Cheese", "100", "30");
 		int result = i2.compareTo(i1);
 		assertEquals(1, result);
@@ -61,7 +61,7 @@ public class TestIngredient {
 	
 	@SuppressWarnings("static-access")
 	@Test
-	public void testListingHeading(){
+	public void testIngreListingHeading(){
 		String toString = i1.getListingHeader();
 		String exp = "Ingredient_ID  Ingredient_Name   Quantity     Price        ";
 		assertEquals(exp, toString);

@@ -18,6 +18,11 @@ public class TestCmdAddOrder {
 		new Food("F001", "CheeseBurger", "20");
 		new Food("F002", "Pizza", "30");
 		new Food("F003", "Sushi", "10");
+		
+		//Order T001 has been added.
+		
+		String[] str = {"F003"};
+		new Order ("T001", str);
 	}
 	
 	@After
@@ -29,28 +34,28 @@ public class TestCmdAddOrder {
 	
 	@Test
 	public void TestAddOrderCorrect() throws Exception{
-		String[] orderStr = {"addOrder", "T001", "F001", "F002"};
+		String[] orderStr = {"addOrder", "T002", "F001", "F002"};
 		CmdAddOrder cmd = new CmdAddOrder();
 		assertEquals("Order is added.", cmd.execute(orderStr));
 	}
 	
 	@Test
 	public void TestAddOrderDuplicateId() throws Exception{
-		String[] orderStr = {"addOrder", "T001", "F003"};
+		String[] orderStr = {"addOrder", "T001", "F002"};
 		CmdAddOrder cmd = new CmdAddOrder();
 		assertEquals("Order ID has been used.", cmd.execute(orderStr));
 	}
 	
 	@Test
 	public void TestAddOrderInvalidFoodId() throws Exception{
-		String[] orderStr = {"addOrder", "T002", "F001", "F350"};
+		String[] orderStr = {"addOrder", "T003", "F001", "F350"};
 		CmdAddOrder cmd = new CmdAddOrder();
 		assertEquals("Invalid food ID!", cmd.execute(orderStr));
 	}
 	
 	@Test
 	public void TestAddOrderInvalidInput() throws Exception{
-		String[] orderStr = {"addOrder", "T003"};
+		String[] orderStr = {"addOrder", "T004"};
 		CmdAddOrder cmd = new CmdAddOrder();
 		assertEquals("Invalid input!", cmd.execute(orderStr));
 	}
