@@ -155,6 +155,10 @@ public class Restaurant {
 		return null;
 	}
 	
+	public ArrayList<ReservedTable> getRTableArrayList() {
+		return allRTables;
+	}
+	
 //Ingredient
 	public String listIngredient() {
 		String listingHeader = Ingredient.getListingHeader() + "\n";
@@ -190,17 +194,17 @@ public class Restaurant {
 
 //Revenue
 	public void printRevenue() {
-		System.out.println(r.toString());		
+		System.out.print(r.toString());		
 	}
 		
 //Cost
 	public void printCost() {
-		System.out.println(c.toString());		
+		System.out.print(c.toString());		
 	}
 	
 //Profit
 	public void printProfit() {
-		System.out.println(p.toString());		
+		System.out.print(p.toString());		
 	}
 	
 }
