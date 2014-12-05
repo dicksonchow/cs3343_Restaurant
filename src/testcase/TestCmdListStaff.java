@@ -39,6 +39,7 @@ public class TestCmdListStaff {
 		String toString2 = "S001         Mary         Staff        $8000        " + "\n";
 		String listStaff = listingHeader + toString1 + toString2;
 		CmdListStaff cmd = new CmdListStaff();
+		System.out.println(cmd.execute());
 		assertEquals(listStaff, cmd.execute());
 	}
 

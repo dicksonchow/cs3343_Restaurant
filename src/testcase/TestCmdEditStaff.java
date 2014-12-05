@@ -13,7 +13,7 @@ import restaurant.Staff;
 
 public class TestCmdEditStaff {
 	
-	Manager m = new Manager("M001", "Jack", "Manager", "15000", "123");
+	Manager m = new Manager("M001", "Dickson", "Manager", "15000", "123");
 	
 	String staffId;
 
@@ -29,6 +29,7 @@ public class TestCmdEditStaff {
 		
 		Staff sd = Restaurant.getInstance().findStaff(staffId);
 		Restaurant.getInstance().removeStaff(sd);
+		System.out.println(Restaurant.getInstance().listStaff());
 	}
 
 	/*CmdEditStaff format: "editStaff", Staff_ID, Staff_Name, Staff_Position, Staff_Salary, Staff_Password

@@ -33,6 +33,7 @@ public class TestCmdAddStaff {
 		
 		Staff sd = Restaurant.getInstance().findStaff(staffId);
 		Restaurant.getInstance().removeStaff(sd);
+		System.out.println(Restaurant.getInstance().listStaff());
 	}
 	
 	/*CmdAddStaff format: "addStaff", Staff_ID, Staff_Name, Staff_Position, Staff_Salary, Staff_Password
@@ -106,7 +107,6 @@ public class TestCmdAddStaff {
 	public void testAddStaffInvalidPw() throws Exception 
 	{
 		String[] addStaff = {"addStaff", "S004", "Tim", "Staff", "8000", ""};
-		staffId = addStaff[1];
 		staffId = addStaff[1];
 		CmdAddStaff cmd = new CmdAddStaff();
 		assertEquals("Invalid input!", cmd.execute(addStaff));

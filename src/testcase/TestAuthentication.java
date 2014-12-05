@@ -8,6 +8,8 @@ import org.junit.Test;
 
 import restaurant.Authentication;
 import restaurant.CmdAddStaff;
+import restaurant.Restaurant;
+import restaurant.Staff;
 
 public class TestAuthentication {
 
@@ -27,7 +29,14 @@ public class TestAuthentication {
 	}
 	
 	@After
-	public void tearDown() {}
+	public void tearDown() {
+		String staffID1 = "M001";
+		String staffID2 = "S001";
+		Staff Jack = Restaurant.getInstance().findStaff(staffID1);
+		Staff Rose = Restaurant.getInstance().findStaff(staffID2);
+		Restaurant.getInstance().removeStaff(Jack);
+		Restaurant.getInstance().removeStaff(Rose);
+	}
 	
 	@Test
 	public void testManagerNotExists(){
