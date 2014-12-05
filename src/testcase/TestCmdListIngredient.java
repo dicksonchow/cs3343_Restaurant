@@ -25,7 +25,7 @@ public class TestCmdListIngredient {
 	@After
 	public void tearDown() {}
 
-	//CmdListIngredient format: "listIng"
+	//CmdListIngredient format: "listIng"    
 	
 //	@Test
 //	public void testListIngre() throws Exception 
