@@ -43,31 +43,31 @@ public class TestOrder {
         Restaurant.getInstance().removeOrder(o2);
     }
 
-//    @Test
-//    public void TestOrderSetOrder1(){
-//        String s = o1.setOrder();
-//        assertEquals("Pizza", s);
-//    }
-//
-//    @Test
-//    public void TestOrderSetOrder2(){
-//        String s = o2.setOrder();
-//        assertEquals("CheeseBurger, Pizza, Sushi", s);
-//    }
+    @Test
+    public void TestOrderSetOrder1(){
+        String s = o1.setOrder();
+        assertEquals("Pizza", s);
+    }
 
-//    @Test
-//    public void TestOrderSetTotalAmount1(){
-//        int actual = o1.setTotalAmount();
-//        assertEquals(30, actual);
-//    }
-//
-//    @Test
-//    public void TestOrderSetTotalAmount2(){
-//    	//Total = 20 + 30 + 15
-//    	
-//        int actual = o2.setTotalAmount();
-//        assertEquals(65, actual);
-//    }
+    @Test
+    public void TestOrderSetOrder2(){
+        String s = o2.setOrder();
+        assertEquals("CheeseBurger, Pizza, Sushi", s);
+    }
+
+    @Test
+    public void TestOrderSetTotalAmount1(){
+        int actual = o1.setTotalAmount();
+        assertEquals(30, actual);
+    }
+
+    @Test
+    public void TestOrderSetTotalAmount2(){
+    	//Total = 20 + 30 + 15
+    	
+        int actual = o2.setTotalAmount();
+        assertEquals(65, actual);
+    }
 
     @Test
     public void TestOrderGetTableId1(){

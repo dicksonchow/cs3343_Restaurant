@@ -10,17 +10,13 @@ import restaurant.Restaurant;
 
 public class TestCost {
 	
-	private Ingredient i1;
-	private Ingredient i2;
-	private Ingredient i3;
+	private Ingredient i1 = new Ingredient("I001", "Fish", "10", "25");;
+	private Ingredient i2 = new Ingredient("I002", "Cheese", "100", "30");;
+	private Ingredient i3 = new Ingredient("I003", "Sugar", "20", "50");;
 
 	@Before
 	public void setUp(){
 		//Ingredient must exist before calculating the cost.
-		
-		i1 = new Ingredient("I001", "Fish", "10", "25");
-		i2 = new Ingredient("I002", "Cheese", "100", "30");
-		i3 = new Ingredient("I003", "Sugar", "20", "50");
 		Restaurant.getInstance().addIngredient(i1);
 		Restaurant.getInstance().addIngredient(i2);
 		Restaurant.getInstance().addIngredient(i3);

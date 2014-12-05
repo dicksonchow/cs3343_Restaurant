@@ -11,16 +11,17 @@ import restaurant.Restaurant;
 
 public class TestIngredient {
 	
-	private Ingredient i1;
+	private Ingredient i1 = new Ingredient("I001", "Fish", "10", "20");;
 
 	@Before
 	public void setUp(){
-		i1 = new Ingredient("I001", "Fish", "10", "20");
 		Restaurant.getInstance().addIngredient(i1);
 	}
 	
 	@After
-	public void teardown(){}
+	public void teardown(){
+		Restaurant.getInstance().removeIngredient(i1);
+	}
 	
 	@Test
 	public void testIngreGetIngredientPrice(){

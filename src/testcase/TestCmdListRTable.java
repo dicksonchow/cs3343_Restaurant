@@ -11,31 +11,34 @@ import restaurant.ReservedTable;
 import restaurant.Restaurant;
 
 public class TestCmdListRTable {
+	
+	ReservedTable t1 = new ReservedTable("T001");
+	ReservedTable t2 = new ReservedTable("T002");
 
 	@Before
 	public void setUp() throws Exception {
 		//Table must be reserved before listing reserved table.
-		
-		ReservedTable t1 = new ReservedTable("T001");
-		ReservedTable t2 = new ReservedTable("T002");
 		Restaurant.getInstance().addRTable(t1);
 		Restaurant.getInstance().addRTable(t2);
 	}
 	
 	@After
-	public void tearDown() {}
+	public void tearDown() {
+		Restaurant.getInstance().removeRTable(t1);
+		Restaurant.getInstance().removeRTable(t2);
+	}
 
 	//CmdListRTable format: "listRTable"
 	
-//	@Test
-//	public void testListRTable() throws Exception 
-//	{
-//		String listingHeader = "Table_ID(Reserved Table) " + "\n";
-//		String toString1 = "T001                     " + "\n";
-//		String toString2 = "T002                     " + "\n";
-//		String listRTbale = listingHeader + toString1 + toString2;
-//		CmdListRTable cmd = new CmdListRTable();
-//		assertEquals(listRTbale, cmd.execute());
-//	}
+	@Test
+	public void testListRTable() throws Exception 
+	{
+		String listingHeader = "Table_ID(Reserved Table) " + "\n";
+		String toString1 = "T001                     " + "\n";
+		String toString2 = "T002                     " + "\n";
+		String listRTbale = listingHeader + toString1 + toString2;
+		CmdListRTable cmd = new CmdListRTable();
+		assertEquals(listRTbale, cmd.execute());
+	}
 
 }

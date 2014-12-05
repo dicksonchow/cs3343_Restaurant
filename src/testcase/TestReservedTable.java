@@ -11,16 +11,17 @@ import restaurant.Restaurant;
 
 public class TestReservedTable {
 
-	private ReservedTable t1;
+	private ReservedTable t1 = new ReservedTable("T001");;
 
 	@Before
 	public void setUp(){
-		t1 = new ReservedTable("T001");
 		Restaurant.getInstance().addRTable(t1);
 	}
 	
 	@After
-	public void teardown(){}
+	public void teardown(){
+		Restaurant.getInstance().removeRTable(t1);
+	}
 	
 	@Test
 	public void testRTableGetRTableId(){

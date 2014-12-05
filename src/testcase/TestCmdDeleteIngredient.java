@@ -11,17 +11,19 @@ import restaurant.Ingredient;
 import restaurant.Restaurant;
 
 public class TestCmdDeleteIngredient {
+	
+	Ingredient i = new Ingredient("I001", "Sugar", "10", "20");
 
 	@Before
 	public void setUp() throws Exception {
 		//Ingredient must exist before deleting ingredient.
-		
-		Ingredient i = new Ingredient("I001", "Sugar", "10", "20");
 		Restaurant.getInstance().addIngredient(i);
 	}
 	
 	@After
-	public void tearDown() {}
+	public void tearDown() {
+		Restaurant.getInstance().removeIngredient(i);
+	}
 
 	/*CmdDeleteIngredient format: "deleteIng", Ingredient_ID
 	 *Ingredient_ID is selected by user.

@@ -11,21 +11,21 @@ import restaurant.Restaurant;
 import restaurant.Staff;
 
 public class TestStaff {
-	
-	private Staff s;
-	private Manager m;
 
+	private Staff s = new Staff("S001", "Michael", "Staff", "2000", "abcd1234");
+	private Manager m = new Manager("M001", "Jack", "Manager", "200000", "54321");
 
 	@Before
 	public void setUp(){
-		s = new Staff("S001", "Michael", "Staff", "2000", "abcd1234");
-		m = new Manager("M001", "Jack", "Manager", "200000", "54321");
 		Restaurant.getInstance().addStaff(s);
 		Restaurant.getInstance().addStaff(m);
 	}
 	
 	@After
-	public void teardown(){}
+	public void teardown(){
+		Restaurant.getInstance().removeStaff(s);
+		Restaurant.getInstance().removeStaff(m);
+	}
 	
 	@Test
 	public void testStaffGetStaffName(){

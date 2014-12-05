@@ -11,17 +11,19 @@ import restaurant.Manager;
 import restaurant.Restaurant;
 
 public class TestCmdDeleteStaff {
+	
+	Manager m = new Manager("M001", "Jack", "Manager", "15000", "123");
 
 	@Before
 	public void setUp() throws Exception {
 		//Staff must exist before deleting staff.
-
-		Manager m = new Manager("M001", "Jack", "Manager", "15000", "123");
 		Restaurant.getInstance().addStaff(m);
 	}
 	
 	@After
-	public void tearDown() {}
+	public void tearDown() {
+		Restaurant.getInstance().removeStaff(m);
+	}
 
 	/*CmdDeleteStaff format: "deleteStaff", Staff_ID
 	 *Staff_ID is selected by user.

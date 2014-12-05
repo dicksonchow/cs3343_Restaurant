@@ -13,20 +13,23 @@ import restaurant.Restaurant;
 
 public class TestCmdDeleteOrder {
 
+	Food f = new Food("F001", "CheeseBurger", "20");
+	
+	String[] addOrder = {"F001"};
+	Order o = new Order("T001", addOrder);
+	
 	@Before
 	public void setUp() throws Exception {
 		//Order must exist before deleting order.
-		
-		Food f = new Food("F001", "CheeseBurger", "20");
 		Restaurant.getInstance().addFood(f);
-		
-		String[] addOrder = {"F001"};
-		Order o = new Order("T001", addOrder);
 		Restaurant.getInstance().addOrder(o);
 	}
 	
 	@After
-	public void tearDown() {}
+	public void tearDown() {
+		Restaurant.getInstance().removeFood(f);
+		Restaurant.getInstance().removeOrder(o);
+	}
 	
 	/*CmdDeleteOrder format: "deleteOrder", Order_ID
 	 *Order_ID is selected by user.

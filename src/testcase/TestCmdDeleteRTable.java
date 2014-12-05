@@ -11,17 +11,19 @@ import restaurant.ReservedTable;
 import restaurant.Restaurant;
 
 public class TestCmdDeleteRTable {
+	
+	ReservedTable t = new ReservedTable("T001");
 
 	@Before
 	public void setUp() throws Exception {
 		//Table must be reserved before deleting reserved table.
-		
-		ReservedTable t = new ReservedTable("T001");
 		Restaurant.getInstance().addRTable(t);
 	}
 	
 	@After
-	public void tearDown() {}
+	public void tearDown() {
+		Restaurant.getInstance().removeRTable(t);
+	}
 
 	/*CmdDeleteRTable format: "deleteRTable", Table_ID
 	 *Table_ID is selected by user.

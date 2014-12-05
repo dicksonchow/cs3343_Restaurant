@@ -11,16 +11,17 @@ import restaurant.Restaurant;
 
 public class TestFood {
 
-	private Food f1;
+	private Food f1 = new Food("F001", "CheeseBurger", "20");;
 
 	@Before
 	public void setUp(){
-		f1 = new Food("F001", "CheeseBurger", "20");
 		Restaurant.getInstance().addFood(f1);
 	}
 	
 	@After
-	public void teardown(){}
+	public void teardown(){
+		Restaurant.getInstance().removeFood(f1);
+	}
 	
 	@Test
 	public void testFoodGetFoodPrice(){

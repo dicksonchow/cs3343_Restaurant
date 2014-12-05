@@ -11,6 +11,9 @@ import restaurant.Staff;
 import restaurant.UserIdentification;
 
 public class TestUserIdentification {
+	
+	Manager m = new Manager("M001", "Jack", "Manager", "15000", "123");
+	Staff s = new Staff("S001", "Rose", "Staff", "9000", "123");
 
 	@Before
 	public void setUp() throws Exception {
@@ -18,14 +21,14 @@ public class TestUserIdentification {
 		 *CmdAddStaff format: "addStaff", Staff_ID, Name, Position, Salary, Password
 		 *After the user successfully logins, UserIdentification will be implemented.
 		 */
-
-		Manager m = new Manager("M001", "Jack", "Manager", "15000", "123");
-		Staff s = new Staff("S001", "Rose", "Staff", "9000", "123");
 		Restaurant.getInstance().addStaff(m);
 		Restaurant.getInstance().addStaff(s);
 	}
 	
-	public void tearDown() {}
+	public void tearDown() {
+		Restaurant.getInstance().removeStaff(s);
+		Restaurant.getInstance().removeStaff(m);
+	}
 	
 	@Test
 	public void testIdentityManager(){
