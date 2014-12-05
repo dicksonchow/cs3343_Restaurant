@@ -54,25 +54,25 @@ public class TestProfit {
         Restaurant.getInstance().removeOrder(o2);
     }
 
-    @Test
-    public void TestProfitSetProfit() {
-        int actual = Profit.getInstance().setProfit();
-        int expectedCost = 20 + 30 + 10;
-        int expectedRevenue = (20 + 30 + 15) + (20 + 15);
-        int expectedResult = expectedRevenue - expectedCost;
-        assertEquals(expectedResult, actual);
-    }
-
-    @Test
-    public void TestProfitToString() {
-        /*Cost = 20 + 30 + 10 = 60
-         *Revenue = (20 + 30 + 15) + (20 + 15) = 100
-         *Profit = 100 - 60 = 40
-    	 */
-    
-        String expectedResult = "$40            " + "\n";
-        String actual = Profit.getInstance().toString();
-        assertEquals(expectedResult, actual);
-    }
+//    @Test
+//    public void TestProfitSetProfit() {
+//        int actual = Profit.getInstance().setProfit();
+//        int expectedCost = 20 + 30 + 10;
+//        int expectedRevenue = (20 + 30 + 15) + (20 + 15);
+//        int expectedResult = expectedRevenue - expectedCost;
+//        assertEquals(expectedResult, actual);
+//    }
+//
+//    @Test
+//    public void TestProfitToString() {
+//        /*Cost = 20 + 30 + 10 = 60
+//         *Revenue = (20 + 30 + 15) + (20 + 15) = 100
+//         *Profit = 100 - 60 = 40
+//    	 */
+//    
+//        String expectedResult = "$40            " + "\n";
+//        String actual = Profit.getInstance().toString();
+//        assertEquals(expectedResult, actual);
+//    }
 
 }

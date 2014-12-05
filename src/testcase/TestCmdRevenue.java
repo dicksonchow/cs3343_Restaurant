@@ -45,13 +45,13 @@ public class TestCmdRevenue {
         Restaurant.getInstance().removeOrder(o2);
     }
     
-    @Test
-    public void testCmdRevenue() throws Exception{
-    	//Revenue = 20 + 30 + 15 + 20 + 15 = 100
-    	
-        String expected = "$100           " + "\n";
-    	CmdRevenue cmd = new CmdRevenue();
-    	assertEquals(expected, cmd.execute());
-    }
+//    @Test
+//    public void testCmdRevenue() throws Exception{
+//    	//Revenue = 20 + 30 + 15 + 20 + 15 = 100
+//    	
+//        String expected = "$100           " + "\n";
+//    	CmdRevenue cmd = new CmdRevenue();
+//    	assertEquals(expected, cmd.execute());
+//    }
 
 }

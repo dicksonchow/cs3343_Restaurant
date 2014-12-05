@@ -34,13 +34,13 @@ public class TestCmdCost {
 	}
 	
 	
-	@Test
-	public void testCmdCost() throws Exception{
-		//Cost = 25 + 30 + 50
-		
-		String exp = "$105           " +"\n";
-		CmdCost cmd = new CmdCost();
-		assertEquals(exp, cmd.execute());
-	}
+//	@Test
+//	public void testCmdCost() throws Exception{
+//		//Cost = 25 + 30 + 50
+//		
+//		String exp = "$105           " +"\n";
+//		CmdCost cmd = new CmdCost();
+//		assertEquals(exp, cmd.execute());
+//	}
 
 }

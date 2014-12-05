@@ -153,38 +153,38 @@ public class TestRestaurant {
 	
 //Staff
 	
-	@Test
-	public void testRestaurantListStaff() throws Exception 
-	{
-		String listingHeader = "Staff_ID     Staff_Name   Position     Salary       " + "\n";
-		String toString1 = "M001         Jack         Manager      $15000       " + "\n";
-		String toString2 = "S001         Mary         Staff        $8000        " + "\n";
-		String exp = listingHeader + toString1 + toString2;
-		assertEquals(exp, r.listStaff());
-	}
+//	@Test
+//	public void testRestaurantListStaff() throws Exception 
+//	{
+//		String listingHeader = "Staff_ID     Staff_Name   Position     Salary       " + "\n";
+//		String toString1 = "M001         Jack         Manager      $15000       " + "\n";
+//		String toString2 = "S001         Mary         Staff        $8000        " + "\n";
+//		String exp = listingHeader + toString1 + toString2;
+//		assertEquals(exp, r.listStaff());
+//	}
 	
-	@Test
-	public void testRestaurantAddStaff() throws Exception 
-	{
-		s3 = new Staff("S002", "Kate", "Staff", "8000", "123");
-		r.addStaff(s3);
-		String result = r.getStaffArrayList().toString();
-		String toString1 = "M001         Jack         Manager      $15000       ";
-		String toString2 = "S001         Mary         Staff        $8000        ";
-		String toString3 = "S002         Kate         Staff        $8000        ";
-		String exp = "[" + toString1 + ", " + toString2 + ", " + toString3 + "]";
-		assertEquals(exp, result);	
-	}
+//	@Test
+//	public void testRestaurantAddStaff() throws Exception 
+//	{
+//		s3 = new Staff("S002", "Kate", "Staff", "8000", "123");
+//		r.addStaff(s3);
+//		String result = r.getStaffArrayList().toString();
+//		String toString1 = "M001         Jack         Manager      $15000       ";
+//		String toString2 = "S001         Mary         Staff        $8000        ";
+//		String toString3 = "S002         Kate         Staff        $8000        ";
+//		String exp = "[" + toString1 + ", " + toString2 + ", " + toString3 + "]";
+//		assertEquals(exp, result);	
+//	}
 	
-	@Test
-	public void testRestaurantRemoveStaff() throws Exception 
-	{
-		r.removeStaff(s1);
-		String result = r.getStaffArrayList().toString();
-		String toString1 = "M001         Jack         Manager      $15000       ";
-		String exp = "[" + toString1 + "]";
-		assertEquals(exp, result);	
-	}
+//	@Test
+//	public void testRestaurantRemoveStaff() throws Exception 
+//	{
+//		r.removeStaff(s1);
+//		String result = r.getStaffArrayList().toString();
+//		String toString1 = "M001         Jack         Manager      $15000       ";
+//		String exp = "[" + toString1 + "]";
+//		assertEquals(exp, result);	
+//	}
 	
 	@Test
 	public void testRestaurantFindStaffCorrect() throws Exception 
@@ -201,15 +201,15 @@ public class TestRestaurant {
 		assertEquals(null, r.findStaff("S009"));	
 	}
 	
-	@Test
-	public void testRestaurantGetStaffArrayList() throws Exception 
-	{
-		String result = r.getStaffArrayList().toString();
-		String toString1 = "M001         Jack         Manager      $15000       ";
-		String toString2 = "S001         Mary         Staff        $8000        ";
-		String exp = "[" + toString1 + ", "+ toString2 + "]";
-		assertEquals(exp, result);	
-	}	
+//	@Test
+//	public void testRestaurantGetStaffArrayList() throws Exception 
+//	{
+//		String result = r.getStaffArrayList().toString();
+//		String toString1 = "M001         Jack         Manager      $15000       ";
+//		String toString2 = "S001         Mary         Staff        $8000        ";
+//		String exp = "[" + toString1 + ", "+ toString2 + "]";
+//		assertEquals(exp, result);	
+//	}	
 	
 //Order
 		
@@ -274,38 +274,38 @@ public class TestRestaurant {
 	
 //Reserved Table
 	
-	@Test
-	public void testRestaurantListRTable() throws Exception 
-	{
-		String listingHeader = "Table_ID(Reserved Table) " + "\n";
-		String toString1 = "T001                     " + "\n";
-		String toString2 = "T002                     " + "\n";
-		String exp = listingHeader + toString1 + toString2;
-		assertEquals(exp, r.listRTable());
-	}
+//	@Test
+//	public void testRestaurantListRTable() throws Exception 
+//	{
+//		String listingHeader = "Table_ID(Reserved Table) " + "\n";
+//		String toString1 = "T001                     " + "\n";
+//		String toString2 = "T002                     " + "\n";
+//		String exp = listingHeader + toString1 + toString2;
+//		assertEquals(exp, r.listRTable());
+//	}
 	
-	@Test
-	public void testRestaurantAddRTable() throws Exception 
-	{
-		t3 = new ReservedTable("T003");
-		r.addRTable(t3);
-		String result = r.getRTableArrayList().toString();
-		String toString1 = "T001                     ";
-		String toString2 = "T002                     ";
-		String toString3 = "T003                     ";
-		String exp = "[" + toString1 + ", " + toString2 + ", " + toString3 + "]";
-		assertEquals(exp, result);	
-	}
+//	@Test
+//	public void testRestaurantAddRTable() throws Exception 
+//	{
+//		t3 = new ReservedTable("T003");
+//		r.addRTable(t3);
+//		String result = r.getRTableArrayList().toString();
+//		String toString1 = "T001                     ";
+//		String toString2 = "T002                     ";
+//		String toString3 = "T003                     ";
+//		String exp = "[" + toString1 + ", " + toString2 + ", " + toString3 + "]";
+//		assertEquals(exp, result);	
+//	}
 	
-	@Test
-	public void testRestaurantRemoveRTable() throws Exception 
-	{
-		r.removeRTable(t1);
-		String result = r.getRTableArrayList().toString();
-		String toString2 = "T002                     ";
-		String exp = "[" + toString2 + "]";
-		assertEquals(exp, result);	
-	}
+//	@Test
+//	public void testRestaurantRemoveRTable() throws Exception 
+//	{
+//		r.removeRTable(t1);
+//		String result = r.getRTableArrayList().toString();
+//		String toString2 = "T002                     ";
+//		String exp = "[" + toString2 + "]";
+//		assertEquals(exp, result);	
+//	}
 	
 	@Test
 	public void testRestaurantFindRTableCorrect() throws Exception 
@@ -322,59 +322,59 @@ public class TestRestaurant {
 		assertEquals(null, r.findRTable("T009"));	
 	}
 	
-	@Test
-	public void testRestaurantGetRTableArrayList() throws Exception 
-	{
-		String result = r.getRTableArrayList().toString();
-		String toString1 = "T001                     ";
-		String toString2 = "T002                     ";
-		String exp = "[" + toString1 + ", "+ toString2 + "]";
-		assertEquals(exp, result);	
-	}
+//	@Test
+//	public void testRestaurantGetRTableArrayList() throws Exception 
+//	{
+//		String result = r.getRTableArrayList().toString();
+//		String toString1 = "T001                     ";
+//		String toString2 = "T002                     ";
+//		String exp = "[" + toString1 + ", "+ toString2 + "]";
+//		assertEquals(exp, result);	
+//	}
 	
 //Ingredient
 	
-	@Test
-	public void testRestaurantListIngredient() throws Exception 
-	{
-		String listingHeader = "Ingredient_ID  Ingredient_Name   Quantity     Price        " + "\n";
-		String toString1 = "I001           Sugar             10           $20          " + "\n";
-		String toString2 = "I002           Fish              10           $30          " + "\n";
-		String exp = listingHeader + toString1 + toString2;
-		assertEquals(exp, r.listIngredient());
-	}
+//	@Test
+//	public void testRestaurantListIngredient() throws Exception 
+//	{
+//		String listingHeader = "Ingredient_ID  Ingredient_Name   Quantity     Price        " + "\n";
+//		String toString1 = "I001           Sugar             10           $20          " + "\n";
+//		String toString2 = "I002           Fish              10           $30          " + "\n";
+//		String exp = listingHeader + toString1 + toString2;
+//		assertEquals(exp, r.listIngredient());
+//	}
 	
-	@Test
-	public void testRestaurantAddIngredient() throws Exception 
-	{
-		i3 = new Ingredient("I003", "Cheese", "10", "40");
-		r.addIngredient(i3);
-		String result = r.getIngredientArrayList().toString();
-		String toString1 = "I001           Sugar             10           $20          ";
-		String toString2 = "I002           Fish              10           $30          ";
-		String toString3 = "I003           Cheese            10           $40          ";
-		String exp = "[" + toString1 + ", " + toString2 + ", " + toString3 + "]";
-		assertEquals(exp, result);	
-	}
+//	@Test
+//	public void testRestaurantAddIngredient() throws Exception 
+//	{
+//		i3 = new Ingredient("I003", "Cheese", "10", "40");
+//		r.addIngredient(i3);
+//		String result = r.getIngredientArrayList().toString();
+//		String toString1 = "I001           Sugar             10           $20          ";
+//		String toString2 = "I002           Fish              10           $30          ";
+//		String toString3 = "I003           Cheese            10           $40          ";
+//		String exp = "[" + toString1 + ", " + toString2 + ", " + toString3 + "]";
+//		assertEquals(exp, result);	
+//	}
 	
-	@Test
-	public void testRestaurantRemoveIngredient() throws Exception 
-	{
-		r.removeIngredient(i1);
-		String result = r.getIngredientArrayList().toString();
-		String toString2 = "I002           Fish              10           $30          ";
-		String exp = "[" + toString2 + "]";
-		assertEquals(exp, result);	
-	}
+//	@Test
+//	public void testRestaurantRemoveIngredient() throws Exception 
+//	{
+//		r.removeIngredient(i1);
+//		String result = r.getIngredientArrayList().toString();
+//		String toString2 = "I002           Fish              10           $30          ";
+//		String exp = "[" + toString2 + "]";
+//		assertEquals(exp, result);	
+//	}
 	
-	@Test
-	public void testRestaurantFindIngredientCorrect() throws Exception 
-	{
-		Ingredient ingredient = r.findIngredient("I001");
-		String result = ingredient.toString();
-		String exp = "I001           Sugar             10           $20          ";
-		assertEquals(exp, result);	
-	}
+//	@Test
+//	public void testRestaurantFindIngredientCorrect() throws Exception 
+//	{
+//		Ingredient ingredient = r.findIngredient("I001");
+//		String result = ingredient.toString();
+//		String exp = "I001           Sugar             10           $20          ";
+//		assertEquals(exp, result);	
+//	}
 	
 	@Test
 	public void testRestaurantFindIngredientNull() throws Exception 
@@ -382,54 +382,54 @@ public class TestRestaurant {
 		assertEquals(null, r.findIngredient("I009"));	
 	}
 	
-	@Test
-	public void testRestaurantGetIngredientArrayList() throws Exception 
-	{
-		String result = r.getIngredientArrayList().toString();
-		String toString1 = "I001           Sugar             10           $20          ";
-		String toString2 = "I002           Fish              10           $30          ";
-		String exp = "[" + toString1 + ", "+ toString2 + "]";
-		assertEquals(exp, result);	
-	}
+//	@Test
+//	public void testRestaurantGetIngredientArrayList() throws Exception 
+//	{
+//		String result = r.getIngredientArrayList().toString();
+//		String toString1 = "I001           Sugar             10           $20          ";
+//		String toString2 = "I002           Fish              10           $30          ";
+//		String exp = "[" + toString1 + ", "+ toString2 + "]";
+//		assertEquals(exp, result);	
+//	}
 	
 //Revenue
 	
-	@Test
-	public void testRestaurantPrintRevenue() throws Exception 
-	{
-		setOutput();
-		r.printRevenue();
-		//Revenue = 20 + 30 + 30 = 80 (total amount of all orders)
-		
-		String exp = "$80            " + "\n";
-		assertEquals(exp, getOutput());
-	}
+//	@Test
+//	public void testRestaurantPrintRevenue() throws Exception 
+//	{
+//		setOutput();
+//		r.printRevenue();
+//		//Revenue = 20 + 30 + 30 = 80 (total amount of all orders)
+//		
+//		String exp = "$80            " + "\n";
+//		assertEquals(exp, getOutput());
+//	}
 
 //Cost
 	
-	@Test
-	public void testRestaurantPrintCost() throws Exception 
-	{
-		setOutput();
-		r.printCost();
-		//Cost = 20 + 30 = 50 (total amount of all ingredient)
-		
-		String exp = "$50            " + "\n";
-		assertEquals(exp, getOutput());
-	}
+//	@Test
+//	public void testRestaurantPrintCost() throws Exception 
+//	{
+//		setOutput();
+//		r.printCost();
+//		//Cost = 20 + 30 = 50 (total amount of all ingredient)
+//		
+//		String exp = "$50            " + "\n";
+//		assertEquals(exp, getOutput());
+//	}
 
 //Profit
 	
-	@Test
-	public void testRestaurantPrintProfit() throws Exception 
-	{
-		setOutput();
-		r.printProfit();
-		//Profit = 80 - 50 = 30 (Revenue - Cost)
-		
-		String exp = "$30            " + "\n";
-		assertEquals(exp, getOutput());
-	}
+//	@Test
+//	public void testRestaurantPrintProfit() throws Exception 
+//	{
+//		setOutput();
+//		r.printProfit();
+//		//Profit = 80 - 50 = 30 (Revenue - Cost)
+//		
+//		String exp = "$30            " + "\n";
+//		assertEquals(exp, getOutput());
+//	}
 	
 
 	PrintStream oldPrintStream;

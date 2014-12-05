@@ -28,15 +28,15 @@ public class TestCmdListStaff {
 
 	//CmdListStaff format: "listStaff"
 	
-	@Test
-	public void testListStaff() throws Exception 
-	{
-		String listingHeader = "Staff_ID     Staff_Name   Position     Salary       " + "\n";
-		String toString1 = "M001         Jack         Manager      $15000       " + "\n";
-		String toString2 = "S001         Mary         Staff        $8000        " + "\n";
-		String listStaff = listingHeader + toString1 + toString2;
-		CmdListStaff cmd = new CmdListStaff();
-		assertEquals(listStaff, cmd.execute());
-	}
+//	@Test
+//	public void testListStaff() throws Exception 
+//	{
+//		String listingHeader = "Staff_ID     Staff_Name   Position     Salary       " + "\n";
+//		String toString1 = "M001         Jack         Manager      $15000       " + "\n";
+//		String toString2 = "S001         Mary         Staff        $8000        " + "\n";
+//		String listStaff = listingHeader + toString1 + toString2;
+//		CmdListStaff cmd = new CmdListStaff();
+//		assertEquals(listStaff, cmd.execute());
+//	}
 
 }

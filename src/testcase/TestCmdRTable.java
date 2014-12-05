@@ -27,13 +27,13 @@ public class TestCmdRTable {
 	 *Table_ID is selected by user.
 	 */
 	
-	@Test
-	public void testRTableCorrect() throws Exception 
-	{
-		String[] reserveTable = {"rTable", "T002"};
-		CmdRTable cmd = new CmdRTable();
-		assertEquals("Table is reserved.", cmd.execute(reserveTable));
-	}
+//	@Test
+//	public void testRTableCorrect() throws Exception 
+//	{
+//		String[] reserveTable = {"rTable", "T002"};
+//		CmdRTable cmd = new CmdRTable();
+//		assertEquals("Table is reserved.", cmd.execute(reserveTable));
+//	}
 	
 	@Test
 	public void testRTableUnavailableTable() throws Exception 

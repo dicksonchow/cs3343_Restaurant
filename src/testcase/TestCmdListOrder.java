@@ -37,15 +37,15 @@ public class TestCmdListOrder {
 
 	//CmdListOrder format: "listOrder"
 	
-	@Test
-	public void testListOrder() throws Exception 
-	{
-		String listingHeader = "Table_ID     Total        Order                                   " + "\n";
-		String toString1 = "T001         $55          CheeseBurger, Pizza, Sushi              " + "\n";
-		String toString2 = "T002         $35          Pizza, Sushi                            " + "\n";
-		String listOrder = listingHeader + toString1 + toString2;
-		CmdListOrder cmd = new CmdListOrder();
-		assertEquals(listOrder, cmd.execute());
-	}
+//	@Test
+//	public void testListOrder() throws Exception 
+//	{
+//		String listingHeader = "Table_ID     Total        Order                                   " + "\n";
+//		String toString1 = "T001         $55          CheeseBurger, Pizza, Sushi              " + "\n";
+//		String toString2 = "T002         $35          Pizza, Sushi                            " + "\n";
+//		String listOrder = listingHeader + toString1 + toString2;
+//		CmdListOrder cmd = new CmdListOrder();
+//		assertEquals(listOrder, cmd.execute());
+//	}
 
 }

@@ -27,15 +27,15 @@ public class TestCmdListIngredient {
 
 	//CmdListIngredient format: "listIng"
 	
-	@Test
-	public void testListIngre() throws Exception 
-	{
-		String listingHeader = "Ingredient_ID  Ingredient_Name   Quantity     Price        " + "\n";
-		String toString1 = "I001           Sugar             10           $20          " + "\n";
-		String toString2 = "I002           Fish              10           $30          " + "\n";
-		String listIngre = listingHeader + toString1 + toString2;
-		CmdListIngredient cmd = new CmdListIngredient();
-		assertEquals(listIngre, cmd.execute());
-	}
+//	@Test
+//	public void testListIngre() throws Exception 
+//	{
+//		String listingHeader = "Ingredient_ID  Ingredient_Name   Quantity     Price        " + "\n";
+//		String toString1 = "I001           Sugar             10           $20          " + "\n";
+//		String toString2 = "I002           Fish              10           $30          " + "\n";
+//		String listIngre = listingHeader + toString1 + toString2;
+//		CmdListIngredient cmd = new CmdListIngredient();
+//		assertEquals(listIngre, cmd.execute());
+//	}
 
 }

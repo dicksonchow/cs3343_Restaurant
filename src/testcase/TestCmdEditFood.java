@@ -43,13 +43,13 @@ public class TestCmdEditFood {
 		assertEquals("Invalid food price!", cmd.execute(editFood));
 	}
 	
-	@Test
-	public void testEditFoodInvalidId() throws Exception 
-	{
-		String[] editFood = {"editFood", "F002", "Hamburger", "30"};
-		CmdEditFood cmd = new CmdEditFood();
-		assertEquals("Invalid food ID!", cmd.execute(editFood));
-	}
+//	@Test
+//	public void testEditFoodInvalidId() throws Exception 
+//	{
+//		String[] editFood = {"editFood", "F002", "Hamburger", "30"};
+//		CmdEditFood cmd = new CmdEditFood();
+//		assertEquals("Invalid food ID!", cmd.execute(editFood));
+//	}
 	
 	@Test
 	public void testEditFoodInvalidName() throws Exception 

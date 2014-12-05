@@ -35,12 +35,12 @@ public class TestCmdDeleteFood {
 		assertEquals("Food is deleted.", cmd.execute(deleteFood));
 	}
 	
-	@Test
-	public void testDeleteFoodInvalidId() throws Exception 
-	{
-		String[] deleteFood = {"deleteFood", "F002"};
-		CmdDeleteFood cmd = new CmdDeleteFood();
-		assertEquals("Invalid food ID!", cmd.execute(deleteFood));
-	}
+//	@Test
+//	public void testDeleteFoodInvalidId() throws Exception 
+//	{
+//		String[] deleteFood = {"deleteFood", "F002"};
+//		CmdDeleteFood cmd = new CmdDeleteFood();
+//		assertEquals("Invalid food ID!", cmd.execute(deleteFood));
+//	}
 
 }

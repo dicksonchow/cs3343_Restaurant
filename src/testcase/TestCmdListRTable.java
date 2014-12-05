@@ -27,15 +27,15 @@ public class TestCmdListRTable {
 
 	//CmdListRTable format: "listRTable"
 	
-	@Test
-	public void testListRTable() throws Exception 
-	{
-		String listingHeader = "Table_ID(Reserved Table) " + "\n";
-		String toString1 = "T001                     " + "\n";
-		String toString2 = "T002                     " + "\n";
-		String listRTbale = listingHeader + toString1 + toString2;
-		CmdListRTable cmd = new CmdListRTable();
-		assertEquals(listRTbale, cmd.execute());
-	}
+//	@Test
+//	public void testListRTable() throws Exception 
+//	{
+//		String listingHeader = "Table_ID(Reserved Table) " + "\n";
+//		String toString1 = "T001                     " + "\n";
+//		String toString2 = "T002                     " + "\n";
+//		String listRTbale = listingHeader + toString1 + toString2;
+//		CmdListRTable cmd = new CmdListRTable();
+//		assertEquals(listRTbale, cmd.execute());
+//	}
 
 }
